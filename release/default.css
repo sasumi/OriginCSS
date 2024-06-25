@@ -135,6 +135,7 @@ button,
   vertical-align: middle;
   border-radius: var(--element-border-radius);
   user-select: none;
+  transition: all 0.1s linear;
 }
 
 textarea {
@@ -207,7 +208,7 @@ input[type=time]:focus,
 textarea:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0px 0px 0px 2px #2687fa, 0px 0px 0px 4px #bbdafe;
+  box-shadow: 0 0 0 2px #2687fa, 0 0 0 4px #bbdafe;
 }
 
 button,
@@ -234,14 +235,51 @@ input[type=reset]:focus,
 [role=button]:focus,
 .button:focus {
   outline: none;
-  box-shadow: 0px 0px 0px 1px var(--color-background), 0px 0px 0px 3px #2687fa;
+  box-shadow: 0 0 0 1px var(--color-background), 0 0 0 3px #2687fa;
 }
 
+button[disabled],
+input[type=button][disabled],
+input[type=submit][disabled],
+input[type=reset][disabled],
+[role=button][disabled],
+.button[disabled],
+.button-disabled {
+  opacity: 0.5;
+  filter: grayscale(80%);
+  cursor: default;
+  pointer-events: none;
+}
+
+body .button-large {
+  font-size: 1.1rem;
+  padding: 0 2em;
+}
+
+body .button-small {
+  font-size: 0.8rem;
+}
+
+body .button-weak,
 input[type=reset] {
-  border: none;
-  background: none;
+  background-color: #58a3fb;
+  color: var(--color-background);
+}
+
+body .button-outline {
+  background-color: var(--color-background);
   color: var(--color-link);
-  cursor: pointer;
+  border: 1px solid var(--color-link);
+}
+
+body .button-plain {
+  background-color: var(--color-background);
+  color: var(--color-link);
+  border-color: transparent;
+}
+
+body .button-plain:hover {
+  border-color: var(--color-link);
 }
 
 .form-caption {
