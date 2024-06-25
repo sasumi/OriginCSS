@@ -31,6 +31,10 @@
   --element-disabled-border-color:#{lighten($color, 40%)};
   --element-disabled-backgroud-color:#{lighten($color, 60%)};
 
+  //table
+  --fixed-header-zindex:2;
+  --fixed-column-zindex:3;
+
   //panel
   --table-cell-border-color:#cccccc;
   --panel-shadow:1px 3px 10px #aaaaaa82;

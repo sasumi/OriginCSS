@@ -22,6 +22,8 @@
   --element-disabled-color:#666666;
   --element-disabled-border-color:#999999;
   --element-disabled-backgroud-color:#cccccc;
+  --fixed-header-zindex:2;
+  --fixed-column-zindex:3;
   --table-cell-border-color:#cccccc;
   --panel-shadow:1px 3px 10px #aaaaaa82;
   --panel-radius: var(--element-border-radius);
@@ -182,7 +184,6 @@ input[type=checkbox] {
   vertical-align: middle;
   position: relative;
   bottom: 2px;
-  font-size: var(--checkbox-size);
 }
 
 label input[type=radio],
@@ -192,10 +193,6 @@ label input[type=checkbox] {
 
 label ~ label {
   margin-left: 0.5em;
-}
-
-*:focus {
-  outline-color: var(--color-link);
 }
 
 input:focus,
@@ -208,8 +205,9 @@ input[type=date]:focus,
 input[type=datetime-local]:focus,
 input[type=time]:focus,
 textarea:focus {
-  box-shadow: 0 0 0 0.2em #bbdafe;
+  outline: none;
   border-color: transparent;
+  box-shadow: 0px 0px 0px 2px #2687fa, 0px 0px 0px 4px #bbdafe;
 }
 
 button,
@@ -227,6 +225,16 @@ input[type=reset],
   background-color: var(--color-link);
   border-color: transparent;
   min-width: 5em;
+}
+
+button:focus,
+input[type=button]:focus,
+input[type=submit]:focus,
+input[type=reset]:focus,
+[role=button]:focus,
+.button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px var(--color-background), 0px 0px 0px 3px #2687fa;
 }
 
 input[type=reset] {
