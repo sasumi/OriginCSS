@@ -1,0 +1,7 @@
+.state-tag{background-color:#eeeeee;display:inline-block;padding:.05em 0.5em;border-radius:5px;zoom:0.9;white-space:nowrap;border:1px solid #cccccc;}
+.state-tag[data-state="draft"]{opacity:0.5}
+.state-tag[data-state="normal"]{color:var(--color-link)}
+.state-tag[data-state="disabled"]{color:gray; text-shadow:1px 1px 1px white;}
+.state-tag[data-state="failure"]{color:red;}
+.state-tag[data-state="success"],
+.state-tag[data-state="online"]{color:green;}

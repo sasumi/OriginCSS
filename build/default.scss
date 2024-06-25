@@ -1,0 +1,27 @@
+//缺省变量，定义，重置样式
+@import "../src/default";
+@import "../src/define";
+@import "../src/reset";
+
+//组件
+@import "../src/component/element";
+@import "../src/component/form";
+@import "../src/component/image";
+@import "../src/component/menu";
+@import "../src/component/otp";
+@import "../src/component/paginate";
+@import "../src/component/progress";
+@import "../src/component/scrollbar";
+@import "../src/component/table";
+@import "../src/component/tag";
+@import "../src/component/text";
+@import "../src/component/toast";
+
+//杂项
+@import "../src/misc/misc";
+
+//布局
+@import "../src/layout/backend_1";
+
+//主题
+@import "../src/theme/blue";

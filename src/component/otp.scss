@@ -1,0 +1,21 @@
+.otp-inputs {
+	--font-size:1.25rem;
+	display:flex;
+	justify-content:center;
+	gap:0.5em;
+	font-size:1.25rem;
+	input {
+		font-size:inherit;
+		width:2em;
+		padding:0 0.5em;
+		box-sizing:border-box;
+		max-width:inherit;
+		min-width:0;
+		text-align:center;
+		font-weight:var(--font-bold);
+		font-family:sans-serif !important;
+	}
+}
+.otp-inputs:has(input:nth-child(6)) input:nth-child(3) {
+	margin-right:1em;
+}

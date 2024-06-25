@@ -1,0 +1,41 @@
+.paginate{
+	padding:.5em 0;
+	display:inline-block;
+	> span,
+	> a{
+		display:inline-block;
+		margin:0 0.5em;
+		user-select:none;
+	}
+	> a{
+		font-weight:bold
+	}
+
+	.paginate-prev:before{content:"<"}
+	.paginate-next:before{content:">"}
+	.paginate-dot:before{content:"···"}
+	[data-target-page]{
+		cursor:pointer;
+		color:var(--color-link);
+		font-weight:bold;
+	}
+
+	.paginate-size-changer{
+		margin-left:1em;
+		select{
+			border:none;
+			padding:0;
+			background:none;
+			margin-top:-0.2em;
+		}
+	}
+
+	.paginate-current{
+		background-color:#eeeeee;
+		display:inline-block;
+		padding:0 0.5em;
+		color:gray !important;
+	}
+}
+
+.paginate-total-0{display:none;}

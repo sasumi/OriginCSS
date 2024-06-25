@@ -1,0 +1,22 @@
+.form-caption {
+	font-size:1.1rem;
+	font-weight:var(--font-bold);
+	margin:0.5em 0;
+}
+.form-table {
+	tbody{
+		tr:nth-child(even) {
+			background-color:var(--even-row-background);
+		}
+		tr:has(td input) th {
+			line-height:var(--element-height);
+		}
+		th {
+			padding:0.5em;
+			vertical-align:top;
+		}
+		td{
+			padding:0.5em 0;
+		}
+	}
+}

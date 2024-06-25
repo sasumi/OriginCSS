@@ -1,0 +1,91 @@
+.data-table{
+	th{
+		font-weight:var(--font-bold);
+	}
+	th, td{
+		padding:0.5em 1em;
+		border:1px solid #cccccc;
+	}
+	tbody tr:nth-child(even){
+		background-color:var(--even-row-background);
+	}
+	tbody tr:hover{
+		background-color:var(--even-row-background);
+	}
+	tr:has(.col-chk){
+		height:1px
+	}
+	.col-chk{
+		height:inherit;
+		text-align:center;
+		padding:0;
+	}
+	.col-chk > label{
+		display:flex;
+		height:100%;
+		width:100%;
+		justify-content:center;
+		padding:0 .75em;
+		box-sizing:border-box
+	}
+	.col-idx{
+		text-align:center;
+	}
+	td.col-num{
+		text-align:right;
+	}
+}
+.table-fixed-head,
+.table-fixed-footer{text-align:left;position:relative;border-collapse:collapse;}
+.table-fixed-head thead,
+.table-fixed-footer tfoot{position:sticky; background-color:#ffffffbd;backdrop-filter:blur(2px);z-index:var(--fixed-header-zindex);}
+.table-fixed-head thead th,
+.table-fixed-footer thead th{background:none;}
+.table-fixed-head thead{top:-8px}
+.table-fixed-footer tfoot{bottom:-10px;}
+.table-fixed-first-column tr > th:first-child, .fixed-first-column tr > td:first-child{position:sticky;left:0;background-color:#ffffffbd;backdrop-filter:blur(2px);z-index:var(--fixed-column-zindex);}
+
+.info-table{
+	width:100%;
+	border-collapse:collapse;border-spacing:0;
+	caption{
+		text-align:left;
+		font-size:1.2rem;
+		background:#ffffffa3;
+		width:100%;
+		position:sticky;
+		left:0;
+		top:0;
+		color:black;
+		z-index:1;
+		backdrop-filter:blur(2px);
+		overflow:hidden;
+		border-right:1rem solid transparent;
+		box-sizing:border-box;
+		margin:1rem 0;
+	}
+	caption:before{content:"";
+		display:inline-block;
+		border-bottom:1px solid #dddddd;
+		height:0;
+		width:.5rem;
+		margin-right:.5rem;
+		vertical-align:middle;
+	}
+	caption:after{content:"";
+		border-bottom:1px solid #dddddd;
+		width:calc(100% - 1rem);
+		position:absolute;
+		margin:1rem 0 0 1rem;
+	}
+	td, th{
+		padding:0.25em 0.5em;
+		text-align:left;
+		vertical-align:top;
+	}
+	th{
+		width:5em;
+		white-space:nowrap;
+	}
+}
+.info-table ~ .info-table{margin-top:1em;}

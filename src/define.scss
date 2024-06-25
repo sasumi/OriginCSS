@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+:root{
+  //color
+  --color:#{$color};
+  --color-link:#{$color-link};
+  --color-inverted:#{$color-inverted};
+  --color-background:#{$color-background};
+  --color-placeholder: #{$color-placeholder};
+
+  --even-row-background: #eeeeee59;
+
+  //font & text
+  --font-size:#{$font-size};
+  --font-family:#{$font-family};
+  --font-code-family:#{$font-code};
+  --line-height:#{$line-height};
+  --font-bold:#{$font-bold};
+
+  //form element
+  --element-actived-color:var(--color-link);
+  --element-height:#{$element-height};
+  --element-border-color:#{darken($color-background, 40%)};
+  --element-border-right-color:#{darken($color-background, 20%)};
+  --element-border-bottom-color:#{darken($color-background, 20%)};
+  --element-border-radius:#{$element-border-radius};
+  --element-focus-border-color:var(--element-actived-color);
+  --text-field-width: #{$text-field-width};
+
+  --element-disabled-color:#{lighten($color, 20%)};
+  --element-disabled-border-color:#{lighten($color, 40%)};
+  --element-disabled-backgroud-color:#{lighten($color, 60%)};
+
+  //panel
+  --table-cell-border-color:#cccccc;
+  --panel-shadow:1px 3px 10px #aaaaaa82;
+  --panel-radius: var(--element-border-radius);
+
+  //icon
+  --icon-arrow-down: url("data:image/svg+xml;utf8,#{$icon-arrow-down}");
+}
