@@ -1,3 +1,35 @@
+@mixin menu{
+	display:none;
+	position:absolute;
+	padding:0.5em 0;
+	min-width:8em;
+	z-index:2;
+	background-color:var(--color-background);
+	box-shadow:var(--panel-shadow);
+	border-radius:var(--panel-radius);
+
+	li.sep{
+		border-top:1px solid var(--table-cell-border-color);
+		opacity:0.5;
+		margin:0.25em 0.75em;
+	}
+	a,
+	span{
+		display:block;
+		color:var(--color);
+		padding:0.35em 1em;
+		white-space:nowrap;
+		&:hover{
+			background-color:lighten($color, 77%);
+			text-shadow:1px 1px 1px white;
+		}
+	}
+}
+
+.menu{
+	@include menu;
+}
+
 .dropdown-list{
 	--gap:1em;
 	display:inline-flex;
@@ -16,50 +48,23 @@
 	> li:has(ul){
 		padding-right:0.5em;
 		position:relative;
+		span{
+			cursor:default;
+		}
+		&:after{
+			content:"＞";
+			opacity:0.8;
+			transform:rotate(90deg);
+			position:absolute;
+			display:inline-block;
+			font-size:1.3em;
+			margin:-0.1em 0 0;
+		}
+		&:hover ul{
+			display:block;
+		}
 	}
-	> li:has(ul) span{
-		cursor:default;
-	}
-	> li:has(ul):after{
-		content:"＞";
-		opacity:0.8;
-		transform:rotate(90deg);
-		position:absolute;
-		display:inline-block;
-		font-size:1.3em;
-		margin:-0.1em 0 0;
-	}
-
 	ul{
-		display:none;
-		position:absolute;
-		padding:0.5em 0;
-		min-width:8em;
-		z-index:2;
-		background-color:var(--color-background);
-		box-shadow:var(--panel-shadow);
-		border-radius:var(--panel-radius);
-	}
-	> li:hover ul{
-		display:block;
-	}
-	ul li.sep {
-		border-top:1px solid var(--table-cell-border-color);
-		opacity:0.5;
-		margin:0.25em 0.75em;
-	}
-	ul a {
-		color:var(--border-color)
-	}
-	ul a,
-	ul span{
-		display:block;
-		padding:0.25em 1em;
-	}
-
-	ul a:hover,
-	ul span:hover {
-		background-color:lighten($color, 77%);
-		text-shadow:1px 1px 1px white;
+		@include menu;
 	}
 }

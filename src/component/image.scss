@@ -3,5 +3,7 @@
 	--block-size:6px;
 	background-position:0px 0px, var(--block-size) var(--block-size);
 	background-size:calc(var(--block-size) * 2) calc(var(--block-size) * 2);
-	background-image:linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee 100%), linear-gradient(45deg, #eeeeee 25%, white 25%, white 75%, #eeeeee 75%, #eeeeee 100%);
+	background-image:
+		linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee 100%),
+		linear-gradient(45deg, #eeeeee 25%, white 25%, white 75%, #eeeeee 75%, #eeeeee 100%);
 }

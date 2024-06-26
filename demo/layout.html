@@ -14,8 +14,10 @@
 			justify-content: flex-start;
 			align-items: flex-start;
 		}
-		.layout-list .iframe-wrap {min-width:30em;max-width: calc(50% - 1em);height:30em;overflow:hidden;border:2px solid gray;}
+		.layout-list .iframe-wrap {min-width:30em;max-width: calc(50% - 1em);height:30em;overflow:hidden;border:2px solid gray; position:relative;}
 		.layout-list iframe {height: 800px;width:1200px;transform-origin:0 0;transform: scale(var(--scale));}
+		.layout-list a {position:absolute;z-index: 2;font-size: 1rem;background: #fff;right: 0;background: var(--color-link);color: var(--color-background);padding: 0.15em 0.5em;opacity: 0.3;}
+		.layout-list a:hover {opacity:1;}
 	</style>
 </head>
 <body>
@@ -24,7 +26,7 @@
 <div class="layout-list">
 	<script>
 		['layout1', 'layout2', 'layout3'].forEach(layout => {
-			document.write(`<div class="iframe-wrap"><iframe src="layout/${layout}.html"></iframe></div>`);
+			document.write(`<div class="iframe-wrap"><a href="layout/${layout}.html" target="_blank">Open</a><iframe src="layout/${layout}.html"></iframe></div>`);
 		});
 
 		const rz = ()=>{

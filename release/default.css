@@ -337,6 +337,34 @@ table.form-column input[type=month] {
   background-image: linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee 100%), linear-gradient(45deg, #eeeeee 25%, white 25%, white 75%, #eeeeee 75%, #eeeeee 100%);
 }
 
+.menu {
+  display: none;
+  position: absolute;
+  padding: 0.5em 0;
+  min-width: 8em;
+  z-index: 2;
+  background-color: var(--color-background);
+  box-shadow: var(--panel-shadow);
+  border-radius: var(--panel-radius);
+}
+.menu li.sep {
+  border-top: 1px solid var(--table-cell-border-color);
+  opacity: 0.5;
+  margin: 0.25em 0.75em;
+}
+.menu a,
+.menu span {
+  display: block;
+  color: var(--color);
+  padding: 0.35em 1em;
+  white-space: nowrap;
+}
+.menu a:hover,
+.menu span:hover {
+  background-color: #f7f7f7;
+  text-shadow: 1px 1px 1px white;
+}
+
 .dropdown-list {
   --gap:1em;
   display: inline-flex;
@@ -368,6 +396,9 @@ table.form-column input[type=month] {
   font-size: 1.3em;
   margin: -0.1em 0 0;
 }
+.dropdown-list > li:has(ul):hover ul {
+  display: block;
+}
 .dropdown-list ul {
   display: none;
   position: absolute;
@@ -378,21 +409,17 @@ table.form-column input[type=month] {
   box-shadow: var(--panel-shadow);
   border-radius: var(--panel-radius);
 }
-.dropdown-list > li:hover ul {
-  display: block;
-}
 .dropdown-list ul li.sep {
   border-top: 1px solid var(--table-cell-border-color);
   opacity: 0.5;
   margin: 0.25em 0.75em;
 }
-.dropdown-list ul a {
-  color: var(--border-color);
-}
 .dropdown-list ul a,
 .dropdown-list ul span {
   display: block;
-  padding: 0.25em 1em;
+  color: var(--color);
+  padding: 0.35em 1em;
+  white-space: nowrap;
 }
 .dropdown-list ul a:hover,
 .dropdown-list ul span:hover {
@@ -471,7 +498,7 @@ table.form-column input[type=month] {
 }
 
 .phone-emulator {
-  --border-color: #cfcfcf;
+  --border-color:black;
   --item-color:#333;
   position: relative;
   width: 360px;
