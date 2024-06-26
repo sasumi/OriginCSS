@@ -2,9 +2,33 @@
 	font-size:1.1rem;
 	font-weight:var(--font-bold);
 	margin:0.5em 0;
+	opacity:0.8;
+}
+
+legend{
+	@extend .form-caption;
+	width:100%;
+	display:flex;
+	align-items:center;
+	gap:0.5em;
+
+	&:before,
+	&:after{
+		content:"";
+		border-bottom:2px solid var(--color-border-light);
+		width:.5em;
+	}
+	&:after{content:"";
+		flex:1;
+	}
+}
+
+fieldset ~ fieldset {
+	margin-top:2em;
 }
 
 table.form-table{
+	width:100%;
 	> tbody{
 		> tr:nth-child(even){
 			background-color:var(--even-row-background);
@@ -13,7 +37,9 @@ table.form-table{
 			line-height:var(--element-height);
 		}
 		> tr > th{
-			padding:0.5em;
+			max-width:2em;
+			white-space:nowrap;
+			padding:0.5em 1em 0.5em 0.5em;
 			vertical-align:top;
 		}
 		> tr > td{
@@ -26,7 +52,7 @@ table.form-column{
 	width:100%;
 
 	> tbody{
-		>tr:nth-child(even) {
+		> tr:nth-child(even){
 		}
 		> tr > th{
 			display:block;
@@ -38,11 +64,11 @@ table.form-column{
 		}
 	}
 
-	.form-submit-row td {
+	.form-submit-row td{
 		display:flex;
 		gap:1em;
 	}
-	.form-submit-row td>* {
+	.form-submit-row td > *{
 		flex:1;
 	}
 

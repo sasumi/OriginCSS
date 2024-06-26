@@ -17,6 +17,7 @@
 		<th>Normal State</th>
 		<th>Disabled State</th>
 		<th>Readonly State</th>
+		<th>Viewonly([readonly] *)</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -25,54 +26,79 @@
 		<td><input type="text" value="" placeholder="Please Input"></td>
 		<td><input type="text" disabled value="Hello"></td>
 		<td><input type="text" readonly value="Hello"></td>
+		<td readonly><input type="text" value="Hello"></td>
 	</tr>
 	<tr>
 		<th>Search</th>
 		<td><input type="search" value="Hello"></td>
 		<td><input type="search" disabled value="Hello"></td>
 		<td><input type="search" readonly value="Hello"></td>
+		<td readonly>
+			<input type="search" readonly value="Hello">
+		</td>
 	</tr>
 	<tr>
 		<th>Password</th>
 		<td><input type="password" value="Hello"></td>
 		<td><input type="password" disabled value="Hello"></td>
 		<td><input type="password" readonly value="Hello"></td>
+		<td readonly>
+			<input type="password" readonly value="Hello">
+		</td>
 	</tr>
 	<tr>
 		<th>URL</th>
 		<td><input type="url" value="https://url.com"></td>
 		<td><input type="url" disabled value="https://url.com"></td>
 		<td><input type="url" readonly value="https://url.com"></td>
+		<td readonly>
+			<input type="url" value="https://url.com">
+		</td>
 	</tr>
 	<tr>
 		<th>Date</th>
 		<td><input type="date" value="2024-06-01"></td>
 		<td><input type="date" disabled value="2024-06-01"></td>
 		<td><input type="date" readonly value="2024-06-01"></td>
+		<td readonly>
+			<input type="date" readonly value="2024-06-01">
+		</td>
 	</tr>
 	<tr>
 		<th>Date Time Local</th>
 		<td><input type="datetime-local" value="2024-06-01 12:00"></td>
 		<td><input type="datetime-local" disabled value="2024-06-01 12:00:01"></td>
 		<td><input type="datetime-local" readonly value="2024-06-01 12:00:01"></td>
+		<td readonly>
+			<input type="datetime-local" readonly value="2024-06-01 12:00:01">
+		</td>
 	</tr>
 	<tr>
 		<th>Time</th>
-		<td><input class="qwc-text" type="time"></td>
-		<td><input class="qwc-text" type="time" disabled></td>
-		<td><input class="qwc-text" type="time" readonly></td>
+		<td><input type="time"></td>
+		<td><input type="time" disabled></td>
+		<td><input type="time" readonly></td>
+		<td readonly>
+			<input type="time" readonly>
+		</td>
 	</tr>
 	<tr>
 		<th>Tel</th>
 		<td><input type="tel" value="+0086 13513323233"></td>
 		<td><input type="tel" disabled value="13513323233"></td>
 		<td><input type="tel" readonly value="13513323233"></td>
+		<td readonly>
+			<input type="tel" readonly value="13513323233">
+		</td>
 	</tr>
 	<tr>
 		<th>Number</th>
-		<td><input class="qwc-text" type="number" value="1"></td>
-		<td><input class="qwc-text" type="number" value="1.2" disabled></td>
-		<td><input class="qwc-text" type="number" value="0.3" readonly></td>
+		<td><input type="number" value="1"></td>
+		<td><input type="number" value="1.2" disabled></td>
+		<td><input type="number" value="0.3" readonly></td>
+		<td readonly>
+			<input type="number" value="0.3" readonly>
+		</td>
 	</tr>
 	<tr>
 		<th>Single Select</th>
@@ -95,6 +121,69 @@
 				<option value="">请选择性别</option>
 				<option value="">男</option>
 				<option value="" selected>女</option>
+			</select>
+		</td>
+		<td readonly>
+			<select size="1" readonly="">
+				<option value="">请选择性别</option>
+				<option value="">男</option>
+				<option value="" selected>女</option>
+			</select>
+		</td>
+	</tr>
+
+	<tr>
+		<th>Single Select With Group</th>
+		<td>
+			<select size="1" required>
+				<optgroup label="Fruit">
+					<option value="">Apple</option>
+					<option value="">Pear</option>
+					<option value="">Watermelon</option>
+				</optgroup>
+				<optgroup label="Vehicle">
+					<option value="">Car</option>
+					<option value="">Bike</option>
+				</optgroup>
+			</select>
+		</td>
+		<td>
+			<select size="1" disabled>
+				<optgroup label="Fruit">
+					<option value="">Apple</option>
+					<option value="">Pear</option>
+					<option value="">Watermelon</option>
+				</optgroup>
+				<optgroup label="Vehicle">
+					<option value="">Car</option>
+					<option value="">Bike</option>
+				</optgroup>
+			</select>
+		</td>
+		<td>
+			<select size="1" readonly="">
+				<optgroup label="Fruit">
+					<option value="">Apple</option>
+					<option value="">Pear</option>
+					<option value="">Watermelon</option>
+				</optgroup>
+				<optgroup label="Vehicle">
+					<option value="">Car</option>
+					<option value="">Bike</option>
+				</optgroup>
+			</select>
+		</td>
+		<td readonly>
+			<select size="1" readonly="">
+				<optgroup label="Fruit">
+					<option value="">Apple</option>
+					<option value="">Pear</option>
+					<option value="">Watermelon</option>
+				</optgroup>
+				<optgroup label="Vehicle">
+					<option value="">Car</option>
+					<option value="">Bike</option>
+				</optgroup>
 			</select>
 		</td>
 	</tr>
@@ -146,6 +235,21 @@
 				<option value="">opt10</option>
 			</select>
 		</td>
+		<td readonly>
+			<select size="5" required multiple>
+				<option value="">请选择</option>
+				<option value="">opt1</option>
+				<option value="" selected>opt2</option>
+				<option value="" selected>opt3</option>
+				<option value="">opt4</option>
+				<option value="">opt5</option>
+				<option value="">opt6</option>
+				<option value="">opt7</option>
+				<option value="">opt8</option>
+				<option value="">opt9</option>
+				<option value="">opt10</option>
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<th>Radio</th>
@@ -157,7 +261,10 @@
 			<input class="qwc-check" type="radio" disabled name="r2"> <label>Radio item1</label>
 			<input class="qwc-check" type="radio" disabled name="r2" checked> <label>Radio item1</label>
 		</td>
-		<td>-</td>
+		<td readonly>
+			<input class="qwc-check" type="radio" name="r2"> <label>Radio item1</label>
+			<input class="qwc-check" type="radio" name="r2" checked> <label>Radio item1</label>
+		</td>
 	</tr>
 	<tr>
 		<th>Checkbox</th>
@@ -170,12 +277,19 @@
 			<input class="qwc-check" type="checkbox" disabled name="r2" checked> <label>checkbox item1</label>
 		</td>
 		<td>-</td>
+		<td readonly>
+			<input class="qwc-check" type="checkbox" name="r2"> <label>checkbox item1</label>
+			<input class="qwc-check" type="checkbox" name="r2" checked> <label>checkbox item1</label>
+		</td>
 	</tr>
 	<tr>
 		<th>Textarea</th>
 		<td><textarea placeholder="please input"></textarea></td>
 		<td><textarea placeholder="please input" disabled></textarea></td>
 		<td><textarea placeholder="please input" readonly></textarea></td>
+		<td readonly>
+			<textarea placeholder="please input"></textarea>
+		</td>
 	</tr>
 	</tbody>
 </table>

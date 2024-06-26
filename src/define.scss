@@ -4,6 +4,7 @@
   //color
   --color: #{$color};
   --color-border:#{$color};
+  --color-border-light:#{lighten($color, 60%)};
   --color-link:#{$color-link};
   --color-inverted:#{$color-inverted};
   --color-background:#{$color-background};

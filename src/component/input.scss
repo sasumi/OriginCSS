@@ -1,0 +1,95 @@
+@charset "UTF-8";
+@import "element";
+@import "button";
+
+//text-field
+textarea,
+select,
+input[type=text],
+input[type=search],
+input[type=password],
+input[type=url],
+input[type=tel],
+input[type=address],
+input[type=number],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=month]{
+	@include shape-element;
+	padding:0 0.5em;
+	min-width:var(--text-field-width);
+	&::placeholder{
+		color:var(--color-placeholder);
+	}
+	&[disabled]::placeholder,
+	&[readonly]::placeholder{
+		color:transparent;
+	}
+
+	//view only
+	@at-root [readonly] &{
+		border:none;
+		background-color:transparent;
+		pointer-events:none;
+		-webkit-appearance:none;
+		-moz-appearance:none;
+
+		option:not([selected]){
+			display:none;
+		}
+		option[selected]{
+			background-color:transparent;
+			&:before{
+				content:"☑ "
+			}
+		}
+	}
+}
+textarea{
+	padding:0.25em 0.5em;
+	min-height:calc(var(--element-height) * 2);
+	width:calc(var(--text-field-width) * 1.5)
+}
+
+//select
+select{
+	width:var(--text-field-width);
+	&[readonly]{
+		pointer-events:none;
+	}
+	&[multiple]{
+		height:calc(var(--element-height) * 3);
+		width:var(--text-field-width);
+	}
+}
+
+//checkbox
+input[type=radio],
+input[type=checkbox]{
+	vertical-align:middle;
+	position:relative;
+	bottom:2px;
+}
+
+//label with checkbox or radio
+label > input[type=radio],
+label > input[type=checkbox]{
+	accent-color:var(--color-link);
+}
+
+//more than two label
+label ~ label{margin-left:0.5em;}
+
+//input file
+input[type=file]{
+	cursor:pointer;
+	&::file-selector-button{
+		@include shape-element;
+		background-color:var(--color-background);
+		color:var(--color-link);
+		border:1px solid var(--color-link);
+		padding:0 1em;
+		font-size:0.9em;
+	}
+}

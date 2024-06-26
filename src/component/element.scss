@@ -1,148 +1,20 @@
 @charset "UTF-8";
 
-//all element [except checkbox]
-input:not([type=checkbox], [type=radio], [type=file]),
-select,
-textarea,
-button,
-[role=button],
-.button{
+@mixin shape-element {
 	box-sizing:border-box;
 	font-family:var(--font-family);
 	height:var(--element-height);
 	border:1px solid var(--element-border-color);
 	border-right-color:var(--element-border-right-color);
 	border-bottom-color:var(--element-border-bottom-color);
-	padding:0 0.5em;
 	font-size:1rem;
 	vertical-align:middle;
 	border-radius:var(--element-border-radius);
 	user-select:none;
 	transition:all 0.1s linear;
-}
-
-//text-field
-textarea,
-input[type=text],
-input[type=search],
-input[type=password],
-input[type=url],
-input[type=tel],
-input[type=address],
-input[type=number],
-input[type=time],
-input[type=date],
-input[type=datetime-local],
-input[type=month]{
-	padding:0 0.5em;
-	min-width:var(--text-field-width);
-	&::placeholder{
-		color:var(--color-placeholder);
-	}
-	&[disabled]::placeholder,
-	&[readonly]::placeholder{
-		color:transparent;
-	}
-}
-textarea{
-	padding:0.25em 0.5em;
-	min-height:calc(var(--element-height) * 2);
-	width:calc(var(--text-field-width) * 1.5)
-}
-
-//select
-select{
-	padding-left:0.25em;
-	width:var(--text-field-width);
-	&[readonly]{
-		pointer-events:none;
-	}
-	&[multiple]{
-		height:calc(var(--element-height) * 3);
-		width:var(--text-field-width);
-	}
-}
-
-//checkbox
-input[type=radio],
-input[type=checkbox]{
-	vertical-align:middle;
-	position:relative;
-	bottom:2px;
-}
-
-//label with checkbox or radio
-label > input[type=radio],
-label > input[type=checkbox]{
-	accent-color:var(--color-link);
-}
-
-label ~ label{margin-left:0.5em;}
-
-select:focus,
-input:focus,
-textarea:focus{
-	outline:none;
-	border-color:transparent;
-	box-shadow:0 0 0 1px lighten($color-link, 20%), 0 0 0 3px lighten($color-link, 40%);
-}
-
-//button
-button,
-input[type=button],
-input[type=submit],
-input[type=reset],
-[role=button],
-.button{
-	padding:0 1em;
-	display:inline-flex;
-	align-items:center;
-	justify-content:center;
-	cursor:pointer;
-	color:var(--color-background);
-	background-color:var(--color-link);
-	border-color:transparent;
-
-	&.button-large{
-		font-size:1.1rem;
-		padding:0 2em;
-	}
-	&.button-small{
-		font-size:0.8rem;
-	}
-	&.button-weak{
-		background-color:lighten($color-link, 20%);
-		color:var(--color-background);
-	}
-	&.button-outline{
-		background-color:var(--color-background);
-		color:var(--color-link);
-		border:1px solid var(--color-link)
-	}
-	&.button-plain{
-		background-color:var(--color-background);
-		color:var(--color-link);
-		border-color:transparent;
-		&:hover{
-			border-color:var(--color-link);
-		}
-	}
-	&:focus{
+	&:focus {
 		outline:none;
-		box-shadow:0 0 0 1px var(--color-background), 0 0 0 3px lighten($color-link, 10%);
-	}
-	&[disabled],
-	&.button-disabled{
-		opacity:0.5;
-		filter:grayscale(80%);
-		cursor:default;
-		pointer-events:none;
+		border-color:transparent;
+		box-shadow:0 0 0 1px lighten($color-link, 20%), 0 0 0 3px lighten($color-link, 40%);
 	}
 }
-
-//button misc
-input[type=reset]{
-	background-color:lighten($color-link, 20%);
-	color:var(--color-background);
-}
-
