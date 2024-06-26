@@ -27,11 +27,11 @@ document.write(`
     .main-nav a.active {background-color:var(--color-link); color:white;}
 </style>
 `);
-setTimeout(()=>{
+onReady(() => {
 	let f = /\w+\.html$/.exec(location.pathname);
-	document.querySelectorAll('.main-nav a').forEach(a=>{
+	document.querySelectorAll('.main-nav a').forEach(a => {
 		if(a.href.indexOf(f[0]) >= 0){
 			a.classList.add('active');
 		}
 	});
-}, 10);
+});
