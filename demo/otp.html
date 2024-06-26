@@ -13,14 +13,78 @@
 
 <div class="center">
 	<div class="otp-inputs">
-		<input type="text" name="" id="" maxlength="1">
-		<input type="text" name="" id="" maxlength="1">
-		<input type="text" name="" id="" maxlength="1">
-		<input type="text" name="" id="" maxlength="1">
-		<input type="text" name="" id="" maxlength="1">
-		<input type="text" name="" id="" maxlength="1">
+		<input type="text" maxlength="1">
+		<input type="text" maxlength="1">
+		<input type="text" maxlength="1">
+		<input type="text" maxlength="1">
+		<input type="text" maxlength="1">
+		<input type="text" maxlength="1">
 	</div>
 
+<code id="code" style="text-align:left; margin-top:2em;">
+<pre lang="js">
+let inputs = Array.from(document.querySelectorAll('.otp-inputs input'));
+inputs.forEach(input => {
+	input.addEventListener('keydown', e => {
+		let idx = inputs.indexOf(input);
+		if(e.code === 'Delete'){
+			input.value = '';
+		}else if(e.code === 'Backspace'){
+			input.value = '';
+			if(idx !== 0){
+				inputs[idx - 1].focus();
+			}
+		}else if(e.keyCode <= 57 && e.keyCode >= 48){
+			input.value = e.key;
+			if(idx !== inputs.length - 1){
+				inputs[idx + 1].focus();
+			}
+		}else if(e.code === 'ArrowRight'){
+			if(idx !== inputs.length - 1){
+				inputs[idx + 1].focus();
+			}
+		}else if(e.code === 'ArrowLeft'){
+			if(idx !== 0){
+				inputs[idx - 1].focus();
+			}
+		}
+		e.preventDefault();
+		return false;
+	});
+});
+</pre>
+	</code>
 </div>
+<script id="script">
+	let inputs = Array.from(document.querySelectorAll('.otp-inputs input'));
+	inputs.forEach(input => {
+		input.addEventListener('keydown', e => {
+			let idx = inputs.indexOf(input);
+			if(e.code === 'Delete'){
+				input.value = '';
+			}else if(e.code === 'Backspace'){
+				input.value = '';
+				if(idx !== 0){
+					inputs[idx - 1].focus();
+				}
+			}else if(e.keyCode <= 57 && e.keyCode >= 48){
+				input.value = e.key;
+				if(idx !== inputs.length - 1){
+					inputs[idx + 1].focus();
+				}
+			}else if(e.code === 'ArrowRight'){
+				if(idx !== inputs.length - 1){
+					inputs[idx + 1].focus();
+				}
+			}else if(e.code === 'ArrowLeft'){
+				if(idx !== 0){
+					inputs[idx - 1].focus();
+				}
+			}
+			e.preventDefault();
+			return false;
+		});
+	});
+</script>
 </body>
 </html>

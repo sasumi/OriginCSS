@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-  --color:#333333;
+  --border-color:#333333;
   --color-link:#056de8;
   --color-inverted:#fff;
   --color-background:#ffffff;
@@ -104,7 +104,7 @@ del, ins, u, s, a, a:hover {
 
 html {
   background-color: var(--color-background);
-  color: var(--color);
+  color: var(--border-color);
   font-size: var(--font-size);
   font-family: var(--font-family);
 }
@@ -149,10 +149,12 @@ input[type=search],
 input[type=password],
 input[type=url],
 input[type=tel],
+input[type=address],
 input[type=number],
+input[type=time],
 input[type=date],
 input[type=datetime-local],
-input[type=time] {
+input[type=month] {
   padding: 0 0.5em;
   min-width: var(--text-field-width);
 }
@@ -196,19 +198,12 @@ label ~ label {
   margin-left: 0.5em;
 }
 
+select:focus,
 input:focus,
-input[type=search]:focus,
-input[type=password]:focus,
-input[type=tel]:focus,
-input[type=number]:focus,
-input[type=url]:focus,
-input[type=date]:focus,
-input[type=datetime-local]:focus,
-input[type=time]:focus,
 textarea:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 2px #2687fa, 0 0 0 4px #bbdafe;
+  box-shadow: 0 0 0 2px #58a3fb, 0 0 0 4px #bbdafe;
 }
 
 button,
@@ -225,7 +220,6 @@ input[type=reset],
   color: var(--color-background);
   background-color: var(--color-link);
   border-color: transparent;
-  min-width: 5em;
 }
 
 button:focus,
@@ -288,18 +282,52 @@ body .button-plain:hover {
   margin: 0.5em 0;
 }
 
-.form-table tbody tr:nth-child(even) {
+table.form-table > tbody > tr:nth-child(even) {
   background-color: var(--even-row-background);
 }
-.form-table tbody tr:has(td input) th {
+table.form-table > tbody > tr:has(td input) th {
   line-height: var(--element-height);
 }
-.form-table tbody th {
+table.form-table > tbody > tr > th {
   padding: 0.5em;
   vertical-align: top;
 }
-.form-table tbody td {
+table.form-table > tbody > tr > td {
   padding: 0.5em 0;
+}
+
+table.form-column {
+  width: 100%;
+}
+table.form-column > tbody > tr > th {
+  display: block;
+  margin-bottom: 0.5em;
+}
+table.form-column > tbody > tr > td {
+  display: block;
+  margin-bottom: 1.5em;
+}
+table.form-column .form-submit-row td {
+  display: flex;
+  gap: 1em;
+}
+table.form-column .form-submit-row td > * {
+  flex: 1;
+}
+table.form-column select,
+table.form-column textarea,
+table.form-column input[type=text],
+table.form-column input[type=search],
+table.form-column input[type=password],
+table.form-column input[type=url],
+table.form-column input[type=tel],
+table.form-column input[type=address],
+table.form-column input[type=number],
+table.form-column input[type=time],
+table.form-column input[type=date],
+table.form-column input[type=datetime-local],
+table.form-column input[type=month] {
+  width: 100%;
 }
 
 .image-grid-background {
@@ -329,7 +357,7 @@ body .button-plain:hover {
   position: relative;
 }
 .dropdown-list > li:has(ul) span {
-  cursor: pointer;
+  cursor: default;
 }
 .dropdown-list > li:has(ul):after {
   content: "＞";
@@ -358,6 +386,9 @@ body .button-plain:hover {
   opacity: 0.5;
   margin: 0.25em 0.75em;
 }
+.dropdown-list ul a {
+  color: var(--border-color);
+}
 .dropdown-list ul a,
 .dropdown-list ul span {
   display: block;
@@ -366,6 +397,7 @@ body .button-plain:hover {
 .dropdown-list ul a:hover,
 .dropdown-list ul span:hover {
   background-color: #f7f7f7;
+  text-shadow: 1px 1px 1px white;
 }
 
 .otp-inputs {
@@ -436,6 +468,43 @@ body .button-plain:hover {
 
 .paginate-total-0 {
   display: none;
+}
+
+.phone-emulator {
+  --border-color: #cfcfcf;
+  --item-color:#333;
+  position: relative;
+  width: 360px;
+  border: 16px var(--border-color) solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+.phone-emulator:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--item-color);
+  border-radius: 10px;
+}
+
+.phone-emulator:after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: var(--item-color);
+  border-radius: 50%;
 }
 
 progress {

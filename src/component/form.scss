@@ -1,22 +1,64 @@
-.form-caption {
+.form-caption{
 	font-size:1.1rem;
 	font-weight:var(--font-bold);
 	margin:0.5em 0;
 }
-.form-table {
-	tbody{
-		tr:nth-child(even) {
+
+table.form-table{
+	> tbody{
+		> tr:nth-child(even){
 			background-color:var(--even-row-background);
 		}
-		tr:has(td input) th {
+		> tr:has(td input) th{
 			line-height:var(--element-height);
 		}
-		th {
+		> tr > th{
 			padding:0.5em;
 			vertical-align:top;
 		}
-		td{
+		> tr > td{
 			padding:0.5em 0;
 		}
+	}
+}
+
+table.form-column{
+	width:100%;
+
+	> tbody{
+		>tr:nth-child(even) {
+		}
+		> tr > th{
+			display:block;
+			margin-bottom:0.5em;
+		}
+		> tr > td{
+			display:block;
+			margin-bottom:1.5em;
+		}
+	}
+
+	.form-submit-row td {
+		display:flex;
+		gap:1em;
+	}
+	.form-submit-row td>* {
+		flex:1;
+	}
+
+	select,
+	textarea,
+	input[type=text],
+	input[type=search],
+	input[type=password],
+	input[type=url],
+	input[type=tel],
+	input[type=address],
+	input[type=number],
+	input[type=time],
+	input[type=date],
+	input[type=datetime-local],
+	input[type=month]{
+		width:100%;
 	}
 }

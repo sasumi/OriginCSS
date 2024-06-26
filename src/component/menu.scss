@@ -18,7 +18,7 @@
 		position:relative;
 	}
 	> li:has(ul) span{
-		cursor:pointer;
+		cursor:default;
 	}
 	> li:has(ul):after{
 		content:"＞";
@@ -48,6 +48,9 @@
 		opacity:0.5;
 		margin:0.25em 0.75em;
 	}
+	ul a {
+		color:var(--border-color)
+	}
 	ul a,
 	ul span{
 		display:block;
@@ -57,5 +60,6 @@
 	ul a:hover,
 	ul span:hover {
 		background-color:lighten($color, 77%);
+		text-shadow:1px 1px 1px white;
 	}
 }

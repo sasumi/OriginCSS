@@ -32,10 +32,12 @@ input[type=search],
 input[type=password],
 input[type=url],
 input[type=tel],
+input[type=address],
 input[type=number],
+input[type=time],
 input[type=date],
 input[type=datetime-local],
-input[type=time]{
+input[type=month]{
 	padding:0 0.5em;
 	min-width:var(--text-field-width);
 }
@@ -78,19 +80,12 @@ label input[type=checkbox]{
 
 label ~ label{margin-left:0.5em;}
 
+select:focus,
 input:focus,
-input[type=search]:focus,
-input[type=password]:focus,
-input[type=tel]:focus,
-input[type=number]:focus,
-input[type=url]:focus,
-input[type=date]:focus,
-input[type=datetime-local]:focus,
-input[type=time]:focus,
 textarea:focus{
 	outline:none;
 	border-color:transparent;
-	box-shadow:0 0 0 2px lighten($color-link, 10%), 0 0 0 4px lighten($color-link, 40%);
+	box-shadow:0 0 0 2px lighten($color-link, 20%), 0 0 0 4px lighten($color-link, 40%);
 }
 
 //button
@@ -108,7 +103,6 @@ input[type=reset],
 	color:var(--color-background);
 	background-color:var(--color-link);
 	border-color:transparent;
-	min-width:5em;
 }
 
 //button focus
