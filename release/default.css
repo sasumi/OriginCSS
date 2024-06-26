@@ -517,20 +517,15 @@ input[type=month][readonly]::placeholder {
 }
 
 textarea {
-  padding: 0.25em 0.5em;
   min-height: calc(var(--element-height) * 2);
   width: calc(var(--text-field-width) * 1.5);
 }
 
-select {
-  width: var(--text-field-width);
-}
 select[readonly] {
   pointer-events: none;
 }
 select[multiple] {
   height: calc(var(--element-height) * 3);
-  width: var(--text-field-width);
 }
 
 input[type=radio],
