@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
-  --border-color:#333333;
+  --color: #333333;
+  --color-border:#333333;
   --color-link:#056de8;
   --color-inverted:#fff;
   --color-background:#ffffff;
@@ -103,10 +104,11 @@ del, ins, u, s, a, a:hover {
 }
 
 html {
+  color: var(--color);
   background-color: var(--color-background);
-  color: var(--border-color);
   font-size: var(--font-size);
   font-family: var(--font-family);
+  line-height: var(--line-height);
 }
 
 a {
@@ -138,12 +140,7 @@ button,
   transition: all 0.1s linear;
 }
 
-textarea {
-  padding: 0.25em 0.5em;
-  min-height: calc(var(--element-height) * 2);
-  width: calc(var(--text-field-width) * 1.5);
-}
-
+textarea,
 input[type=text],
 input[type=search],
 input[type=password],
@@ -158,25 +155,59 @@ input[type=month] {
   padding: 0 0.5em;
   min-width: var(--text-field-width);
 }
-
-::placeholder {
+textarea::placeholder,
+input[type=text]::placeholder,
+input[type=search]::placeholder,
+input[type=password]::placeholder,
+input[type=url]::placeholder,
+input[type=tel]::placeholder,
+input[type=address]::placeholder,
+input[type=number]::placeholder,
+input[type=time]::placeholder,
+input[type=date]::placeholder,
+input[type=datetime-local]::placeholder,
+input[type=month]::placeholder {
   color: var(--color-placeholder);
 }
-
-[disabled]::placeholder,
-[readonly]::placeholder {
+textarea[disabled]::placeholder, textarea[readonly]::placeholder,
+input[type=text][disabled]::placeholder,
+input[type=text][readonly]::placeholder,
+input[type=search][disabled]::placeholder,
+input[type=search][readonly]::placeholder,
+input[type=password][disabled]::placeholder,
+input[type=password][readonly]::placeholder,
+input[type=url][disabled]::placeholder,
+input[type=url][readonly]::placeholder,
+input[type=tel][disabled]::placeholder,
+input[type=tel][readonly]::placeholder,
+input[type=address][disabled]::placeholder,
+input[type=address][readonly]::placeholder,
+input[type=number][disabled]::placeholder,
+input[type=number][readonly]::placeholder,
+input[type=time][disabled]::placeholder,
+input[type=time][readonly]::placeholder,
+input[type=date][disabled]::placeholder,
+input[type=date][readonly]::placeholder,
+input[type=datetime-local][disabled]::placeholder,
+input[type=datetime-local][readonly]::placeholder,
+input[type=month][disabled]::placeholder,
+input[type=month][readonly]::placeholder {
   color: transparent;
+}
+
+textarea {
+  padding: 0.25em 0.5em;
+  min-height: calc(var(--element-height) * 2);
+  width: calc(var(--text-field-width) * 1.5);
 }
 
 select {
   padding-left: 0.25em;
   width: var(--text-field-width);
 }
-
 select[readonly] {
   pointer-events: none;
 }
-
 select[multiple] {
   height: calc(var(--element-height) * 3);
   width: var(--text-field-width);
@@ -189,8 +220,8 @@ input[type=checkbox] {
   bottom: 2px;
 }
 
-label input[type=radio],
-label input[type=checkbox] {
+label > input[type=radio],
+label > input[type=checkbox] {
   accent-color: var(--color-link);
 }
 
@@ -203,7 +234,7 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 2px #58a3fb, 0 0 0 4px #bbdafe;
+  box-shadow: 0 0 0 1px #58a3fb, 0 0 0 3px #bbdafe;
 }
 
 button,
@@ -221,7 +252,60 @@ input[type=reset],
   background-color: var(--color-link);
   border-color: transparent;
 }
-
+button.button-large,
+input[type=button].button-large,
+input[type=submit].button-large,
+input[type=reset].button-large,
+[role=button].button-large,
+.button.button-large {
+  font-size: 1.1rem;
+  padding: 0 2em;
+}
+button.button-small,
+input[type=button].button-small,
+input[type=submit].button-small,
+input[type=reset].button-small,
+[role=button].button-small,
+.button.button-small {
+  font-size: 0.8rem;
+}
+button.button-weak,
+input[type=button].button-weak,
+input[type=submit].button-weak,
+input[type=reset].button-weak,
+[role=button].button-weak,
+.button.button-weak {
+  background-color: #58a3fb;
+  color: var(--color-background);
+}
+button.button-outline,
+input[type=button].button-outline,
+input[type=submit].button-outline,
+input[type=reset].button-outline,
+[role=button].button-outline,
+.button.button-outline {
+  background-color: var(--color-background);
+  color: var(--color-link);
+  border: 1px solid var(--color-link);
+}
+button.button-plain,
+input[type=button].button-plain,
+input[type=submit].button-plain,
+input[type=reset].button-plain,
+[role=button].button-plain,
+.button.button-plain {
+  background-color: var(--color-background);
+  color: var(--color-link);
+  border-color: transparent;
+}
+button.button-plain:hover,
+input[type=button].button-plain:hover,
+input[type=submit].button-plain:hover,
+input[type=reset].button-plain:hover,
+[role=button].button-plain:hover,
+.button.button-plain:hover {
+  border-color: var(--color-link);
+}
 button:focus,
 input[type=button]:focus,
 input[type=submit]:focus,
@@ -231,49 +315,26 @@ input[type=reset]:focus,
   outline: none;
   box-shadow: 0 0 0 1px var(--color-background), 0 0 0 3px #2687fa;
 }
-
-button[disabled],
+button[disabled], button.button-disabled,
 input[type=button][disabled],
+input[type=button].button-disabled,
 input[type=submit][disabled],
+input[type=submit].button-disabled,
 input[type=reset][disabled],
+input[type=reset].button-disabled,
 [role=button][disabled],
+[role=button].button-disabled,
 .button[disabled],
-.button-disabled {
+.button.button-disabled {
   opacity: 0.5;
   filter: grayscale(80%);
   cursor: default;
   pointer-events: none;
 }
 
-body .button-large {
-  font-size: 1.1rem;
-  padding: 0 2em;
-}
-
-body .button-small {
-  font-size: 0.8rem;
-}
-
-body .button-weak,
 input[type=reset] {
   background-color: #58a3fb;
   color: var(--color-background);
-}
-
-body .button-outline {
-  background-color: var(--color-background);
-  color: var(--color-link);
-  border: 1px solid var(--color-link);
-}
-
-body .button-plain {
-  background-color: var(--color-background);
-  color: var(--color-link);
-  border-color: transparent;
-}
-
-body .button-plain:hover {
-  border-color: var(--color-link);
 }
 
 .form-caption {
@@ -337,7 +398,7 @@ table.form-column input[type=month] {
   background-image: linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee 100%), linear-gradient(45deg, #eeeeee 25%, white 25%, white 75%, #eeeeee 75%, #eeeeee 100%);
 }
 
-.menu {
+.menu, .dropdown-list ul {
   display: none;
   position: absolute;
   padding: 0.5em 0;
@@ -347,20 +408,22 @@ table.form-column input[type=month] {
   box-shadow: var(--panel-shadow);
   border-radius: var(--panel-radius);
 }
-.menu li.sep {
+.menu > li.sep, .dropdown-list ul > li.sep {
   border-top: 1px solid var(--table-cell-border-color);
   opacity: 0.5;
   margin: 0.25em 0.75em;
 }
-.menu a,
-.menu span {
+.menu > li > a, .dropdown-list ul > li > a,
+.menu > li > span,
+.dropdown-list ul > li > span {
   display: block;
   color: var(--color);
   padding: 0.35em 1em;
   white-space: nowrap;
 }
-.menu a:hover,
-.menu span:hover {
+.menu > li > a:hover, .dropdown-list ul > li > a:hover,
+.menu > li > span:hover,
+.dropdown-list ul > li > span:hover {
   background-color: #f7f7f7;
   text-shadow: 1px 1px 1px white;
 }
@@ -399,34 +462,6 @@ table.form-column input[type=month] {
 .dropdown-list > li:has(ul):hover ul {
   display: block;
 }
-.dropdown-list ul {
-  display: none;
-  position: absolute;
-  padding: 0.5em 0;
-  min-width: 8em;
-  z-index: 2;
-  background-color: var(--color-background);
-  box-shadow: var(--panel-shadow);
-  border-radius: var(--panel-radius);
-}
-.dropdown-list ul li.sep {
-  border-top: 1px solid var(--table-cell-border-color);
-  opacity: 0.5;
-  margin: 0.25em 0.75em;
-}
-.dropdown-list ul a,
-.dropdown-list ul span {
-  display: block;
-  color: var(--color);
-  padding: 0.35em 1em;
-  white-space: nowrap;
-}
-.dropdown-list ul a:hover,
-.dropdown-list ul span:hover {
-  background-color: #f7f7f7;
-  text-shadow: 1px 1px 1px white;
-}
-
 .otp-inputs {
   --font-size:1.25rem;
   display: flex;
@@ -498,11 +533,11 @@ table.form-column input[type=month] {
 }
 
 .phone-emulator {
-  --border-color:black;
+  --color-border:black;
   --item-color:#333;
   position: relative;
   width: 360px;
-  border: 16px var(--border-color) solid;
+  border: 16px var(--color-border) solid;
   border-top-width: 60px;
   border-bottom-width: 60px;
   border-radius: 36px;

@@ -1,9 +1,9 @@
 .phone-emulator {
-	--border-color:black;
+	--color-border:black;
 	--item-color:#333;
 	position: relative;
 	width: 360px;
-	border: 16px var(--border-color) solid;
+	border: 16px var(--color-border) solid;
 	border-top-width: 60px;
 	border-bottom-width: 60px;
 	border-radius: 36px;

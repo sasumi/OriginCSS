@@ -22,11 +22,7 @@ button,
 }
 
 //text-field
-textarea{
-	padding:0.25em 0.5em;
-	min-height:calc(var(--element-height) * 2);
-	width:calc(var(--text-field-width) * 1.5)
-}
+textarea,
 input[type=text],
 input[type=search],
 input[type=password],
@@ -40,28 +36,31 @@ input[type=datetime-local],
 input[type=month]{
 	padding:0 0.5em;
 	min-width:var(--text-field-width);
+	&::placeholder{
+		color:var(--color-placeholder);
+	}
+	&[disabled]::placeholder,
+	&[readonly]::placeholder{
+		color:transparent;
+	}
 }
-
-::placeholder{
-	color:var(--color-placeholder);
-}
-[disabled]::placeholder,
-[readonly]::placeholder{
-	color:transparent;
+textarea{
+	padding:0.25em 0.5em;
+	min-height:calc(var(--element-height) * 2);
+	width:calc(var(--text-field-width) * 1.5)
 }
 
 //select
 select{
 	padding-left:0.25em;
 	width:var(--text-field-width);
-}
-select[readonly]{
-	pointer-events:none;
-}
-
-select[multiple]{
-	height:calc(var(--element-height) * 3);
-	width:var(--text-field-width);
+	&[readonly]{
+		pointer-events:none;
+	}
+	&[multiple]{
+		height:calc(var(--element-height) * 3);
+		width:var(--text-field-width);
+	}
 }
 
 //checkbox
@@ -73,8 +72,8 @@ input[type=checkbox]{
 }
 
 //label with checkbox or radio
-label input[type=radio],
-label input[type=checkbox]{
+label > input[type=radio],
+label > input[type=checkbox]{
 	accent-color:var(--color-link);
 }
 
@@ -85,7 +84,7 @@ input:focus,
 textarea:focus{
 	outline:none;
 	border-color:transparent;
-	box-shadow:0 0 0 2px lighten($color-link, 20%), 0 0 0 4px lighten($color-link, 40%);
+	box-shadow:0 0 0 1px lighten($color-link, 20%), 0 0 0 3px lighten($color-link, 40%);
 }
 
 //button
@@ -103,61 +102,47 @@ input[type=reset],
 	color:var(--color-background);
 	background-color:var(--color-link);
 	border-color:transparent;
-}
 
-//button focus
-button:focus,
-input[type=button]:focus,
-input[type=submit]:focus,
-input[type=reset]:focus,
-[role=button]:focus,
-.button:focus{
-	outline:none;
-	box-shadow:0 0 0 1px var(--color-background), 0 0 0 3px lighten($color-link, 10%);
-}
-
-//button disabled
-button[disabled],
-input[type=button][disabled],
-input[type=submit][disabled],
-input[type=reset][disabled],
-[role=button][disabled],
-.button[disabled],
-.button-disabled {
-	opacity:0.5;
-	filter:grayscale(80%);
-	cursor:default;
-	pointer-events:none;
+	&.button-large{
+		font-size:1.1rem;
+		padding:0 2em;
+	}
+	&.button-small{
+		font-size:0.8rem;
+	}
+	&.button-weak{
+		background-color:lighten($color-link, 20%);
+		color:var(--color-background);
+	}
+	&.button-outline{
+		background-color:var(--color-background);
+		color:var(--color-link);
+		border:1px solid var(--color-link)
+	}
+	&.button-plain{
+		background-color:var(--color-background);
+		color:var(--color-link);
+		border-color:transparent;
+		&:hover{
+			border-color:var(--color-link);
+		}
+	}
+	&:focus{
+		outline:none;
+		box-shadow:0 0 0 1px var(--color-background), 0 0 0 3px lighten($color-link, 10%);
+	}
+	&[disabled],
+	&.button-disabled{
+		opacity:0.5;
+		filter:grayscale(80%);
+		cursor:default;
+		pointer-events:none;
+	}
 }
 
 //button misc
-body .button-large {
-	font-size:1.1rem;
-	padding:0 2em;
-}
-
-body .button-small {
-	font-size:0.8rem;
-}
-
-body .button-weak,
-input[type=reset] {
+input[type=reset]{
 	background-color:lighten($color-link, 20%);
 	color:var(--color-background);
-}
-
-body .button-outline {
-	background-color:var(--color-background);
-	color:var(--color-link);
-	border:1px solid var(--color-link)
-}
-
-body .button-plain {
-	background-color:var(--color-background);
-	color:var(--color-link);
-	border-color:transparent;
-}
-body .button-plain:hover {
-	border-color:var(--color-link);
 }
 

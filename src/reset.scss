@@ -18,9 +18,9 @@ a, button{cursor:pointer;}
 h1, h2, h3, h4, h5, h6, em, strong, b{font-weight:var(--font-bold);}
 del, ins, u, s, a, a:hover{text-decoration:none;}
 
-html {background-color:var(--color-background); color:var(--border-color); font-size:var(--font-size); font-family:var(--font-family)}
-a {color:var(--color-link)}
-code {
-	font-style: italic;
-	font-family: var(--font-code-family);
+html{color:var(--color); background-color:var(--color-background); font-size:var(--font-size); font-family:var(--font-family); line-height:var(--line-height)}
+a{color:var(--color-link)}
+code{
+	font-style:italic;
+	font-family:var(--font-code-family);
 }

@@ -11,11 +11,10 @@
 			display:flex;
 			gap:1em;
 			flex-wrap: wrap;
-			justify-content: flex-start;
 			align-items: flex-start;
 		}
-		.layout-list .iframe-wrap {min-width:30em;max-width: calc(50% - 1em);height:30em;overflow:hidden;border:2px solid gray; position:relative;}
-		.layout-list iframe {height: 800px;width:1200px;transform-origin:0 0;transform: scale(var(--scale));}
+		.layout-list .iframe-wrap {min-width:30em;max-width: calc(50% - 1em);height:30em;overflow:hidden;border:2px solid gray;position:relative;flex: 1;}
+		.layout-list iframe{transform-origin:0 0;transform:scale(var(--scale));}
 		.layout-list a {position:absolute;z-index: 2;font-size: 1rem;background: #fff;right: 0;background: var(--color-link);color: var(--color-background);padding: 0.15em 0.5em;opacity: 0.3;}
 		.layout-list a:hover {opacity:1;}
 	</style>
@@ -24,20 +23,32 @@
 <script src="nav.js"></script>
 <h2>Layout</h2>
 <div class="layout-list">
+	<div class="iframe-wrap">
+		<a href="layout/layout1.html" target="_blank">Open</a>
+		<iframe src="layout/layout1.html"></iframe>
+	</div>
+	<div class="iframe-wrap">
+		<a href="layout/layout2.html" target="_blank">Open</a>
+		<iframe src="layout/layout2.html"></iframe>
+	</div>
 	<script>
-		['layout1', 'layout2', 'layout3'].forEach(layout => {
-			document.write(`<div class="iframe-wrap"><a href="layout/${layout}.html" target="_blank">Open</a><iframe src="layout/${layout}.html"></iframe></div>`);
-		});
-
+		const frame_width = 1200;
 		const rz = ()=>{
 			let wrap = document.querySelector('.iframe-wrap');
 			let w = wrap.clientWidth;
 			console.log(w);
-			let scale = w/1200;
-			document.querySelector('.layout-list').style.cssText = '--scale:'+scale;
+			let scale = w/frame_width;
+			let frame_height = wrap.clientHeight / scale;
+			document.querySelector('.layout-list iframe').forEach(iframe => {
+				iframe.style.cssText = `
+				--scale: ${scale};
+				width: ${frame_width}px;
+				height: ${frame_height}px;
+			`;
+			});
 		};
 		window.addEventListener('resize', rz);
-		rz();
+		// setTimeout(rz, 1000);
 	</script>
 </div>
 </body>

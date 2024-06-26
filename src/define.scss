@@ -2,7 +2,8 @@
 
 :root{
   //color
-  --border-color:#{$color};
+  --color: #{$color};
+  --color-border:#{$color};
   --color-link:#{$color-link};
   --color-inverted:#{$color-inverted};
   --color-background:#{$color-background};
