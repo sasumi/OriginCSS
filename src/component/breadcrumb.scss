@@ -1,0 +1,22 @@
+@charset "UTF-8";
+ul.breadcrumb {
+	display:flex;
+	>li:after {
+		content:"";
+		width:0;
+		height:0;
+		border:0.4em solid transparent;
+		border-left-width:0.6em;
+		border-left-color:var(--color);
+		opacity:0.5;
+		display:inline-block;
+		vertical-align:middle;
+		margin:-0.2em 0.25em 0 0.5em;
+	}
+	>li:last-child:after {
+		display:none;
+	}
+	>li:last-child>span {
+		opacity:0.8;
+	}
+}

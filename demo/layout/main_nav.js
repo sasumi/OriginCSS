@@ -1,7 +1,7 @@
 document.write(`
 <ul class="main-nav">
-    <li><a href="" data-mod-target="index" class="active">Index</a></li>
-    <li><a href="" data-mod-target="list">List</a></li>
+    <li><a href="" data-mod-target="index">Index</a></li>
+    <li><a href="" data-mod-target="list" class="active">List</a></li>
     <li><a href="" data-mod-target="create">Create</a></li>
     <li><a href="" data-mod-target="info">Info</a></li>
 </ul>`);
@@ -19,8 +19,10 @@ onReady(() => {
 		});
 		mods.forEach(m => {
 			if(m.getAttribute('data-mod') === mod){
+				m.classList.add('mod-active');
 				m.style.display = '';
 			}else{
+				m.classList.remove('mod-active');
 				m.style.display = 'none';
 			}
 		})

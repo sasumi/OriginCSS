@@ -1,17 +1,17 @@
-$color:#333333;
-$color-link:#056de8;
-$color-inverted: #fff;
-$color-background:#ffffff;
-$color-placeholder: #ccc;
+$color:#333333 !default;
+$color-link:#056de8 !default;
+$color-inverted:#ffffff !default;
+$color-background:#ffffff !default;
+$color-placeholder:#cccccc !default;
 
-$font-size: 0.9rem;
-$font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
-$font-code:ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-$line-height: 1.6;
-$font-bold: 600;
+$font-size:0.8rem !default;
+$font-family:-apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif !default;
+$font-code:ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !default;
+$line-height:1.6 !default;
+$font-bold:600 !default;
 
-$element-height: 2.25em;
-$element-border-radius:3px;
-$text-field-width: 15em;
+$element-height:2.25em !default;
+$element-border-radius:3px !default;
+$text-field-width:15em !default;
 
-$icon-arrow-down: "<svg t='1719296430104' class='icon' viewBox='0 0 1026 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9610' width='200' height='200'><path d='M947.09025987 259.60869599c-21.52173955-19.56521777-54.78260888-17.60869599-74.34782579 1.95652178L512.7424332 648.95652177 152.7424332 261.56521778c-19.56521777-21.52173955-52.82608711-21.52173955-74.34782578-1.95652179-21.52173955 19.56521777-21.52173955 52.82608711-1.95652177 74.34782578L473.61199854 762.43478222c9.78260888 9.78260888 23.47826045 17.60869599 39.13043466 17.60869601 13.69565244 0 29.34782578-5.86956533 39.13043467-17.608696l397.17391289-428.47826046C968.61199854 312.43478222 968.61199854 279.17391289 947.09025987 259.60869599z' p-id='9611'></path></svg>";
+$icon-arrow-down:"<svg t='1719296430104' class='icon' viewBox='0 0 1026 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9610' width='200' height='200'><path d='M947.09025987 259.60869599c-21.52173955-19.56521777-54.78260888-17.60869599-74.34782579 1.95652178L512.7424332 648.95652177 152.7424332 261.56521778c-19.56521777-21.52173955-52.82608711-21.52173955-74.34782578-1.95652179-21.52173955 19.56521777-21.52173955 52.82608711-1.95652177 74.34782578L473.61199854 762.43478222c9.78260888 9.78260888 23.47826045 17.60869599 39.13043466 17.60869601 13.69565244 0 29.34782578-5.86956533 39.13043467-17.608696l397.17391289-428.47826046C968.61199854 312.43478222 968.61199854 279.17391289 947.09025987 259.60869599z' p-id='9611'></path></svg>" !default;

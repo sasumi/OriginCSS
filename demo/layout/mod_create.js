@@ -1,7 +1,7 @@
 document.write(`
-<form action="" data-mod="create">
-    <table class="form-table">
-        <caption class="form-caption">Form by table layout</caption>
+<form action="" >
+    <table class="form-landscape">
+        <caption>Create Data</caption>
         <tbody>
         <tr>
             <th>Field Name:</th>

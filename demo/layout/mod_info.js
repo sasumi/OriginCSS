@@ -1,7 +1,7 @@
 document.write(`
 <form action="" data-mod="info" readonly="readonly">
-    <table class="form-table">
-        <caption class="form-caption">Form by table layout</caption>
+    <table class="form-landscape">
+        <caption>Data Info</caption>
         <tbody>
         <tr>
             <th>Field Name:</th>
