@@ -593,7 +593,7 @@ input[type=file]::file-selector-button:focus {
   box-shadow: 0 0 0 1px #58a3fb, 0 0 0 3px #bbdafe;
 }
 
-.form-caption, .info-table caption, .table-data caption, .form-legend:not(caption), legend:not(caption) {
+.form-caption, .info-table caption, .table-data caption, caption, .form-legend:not(caption), legend:not(caption) {
   font-size: 1.1rem;
   font-weight: var(--font-bold);
   margin: 0.5em 0;
@@ -1088,6 +1088,52 @@ progress:not([value]):after {
 
 .center {
   text-align: center;
+}
+
+html.layout-1 .layout-header {
+  display: grid;
+  justify-content: space-between;
+  grid-template-areas: "logo login-info" "main-nav main-nav";
+}
+html.layout-1 .layout-header .layout-logo {
+  grid-area: logo;
+}
+html.layout-1 .layout-header .layout-login-info {
+  grid-area: login-info;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+html.layout-1 .layout-header .layout-main-nav {
+  grid-area: main-nav;
+}
+html.layout-1 .layout-header .layout-main-nav .main-nav {
+  display: flex;
+  gap: 1em;
+}
+html.layout-2 .layout-page {
+  display: grid;
+  grid-template-areas: "header content" "header footer";
+  grid-template-columns: var(--sidebar-width, 200px) auto;
+  min-height: 100vh;
+}
+html.layout-2 .layout-page .layout-header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+}
+html.layout-2 .layout-page .layout-header .layout-logo {
+  order: 1;
+}
+html.layout-2 .layout-page .layout-header .layout-login-info {
+  order: 3;
+}
+html.layout-2 .layout-page .layout-header .layout-main-nav {
+  flex: 1;
+  order: 2;
+}
+html.layout-2 .layout-page .layout-footer {
+  grid-area: footer;
 }
 
 /*# sourceMappingURL=default.css.map */

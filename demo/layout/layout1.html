@@ -1,67 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="layout-1">
 <head>
 	<meta charset="UTF-8">
 	<title>layout1</title>
 	<script src="./../lib.js"></script>
 	<link rel="stylesheet" href="./../../release/default.css">
 	<style>
-		:root {
-		}
-		.layout-page{margin:0 auto}
-		.layout-content{padding:0 1em;}
-		.layout-content .breadcrumb,
-		.layout-content .form-filter,
-		.layout-content .table-data,
-		.layout-content .list-toolbar,
-		.layout-content .paginate {margin: 0.75em 0;}
-		.layout-content .table-data {width:100%;}
-
-		.layout-header{position:relative;}
-		.layout-footer {color:#aaa; text-align:center;}
-		.layout-footer nav {display:inline-flex; gap:1em;}
-		.layout-footer a{color:inherit;}
-
-		.main-nav{display:flex;gap:1em;background-color:#eeeeee;padding: 0.5em;}
-		.main-nav a{color:var(--color); font-weight:bold; padding:0.25em 1em;}
-		.main-nav a.active {background-color:gray; color:white;}
-
-		.logo{padding:.25em 0.5em; font-size:1.5em;}
-		.logo a{color:var(--color);display:flex;align-items:center;}
-		.logo a:before{content:"☼"; font-size:2em; margin-right:0.25em; margin-top:-0.1em;}
-
-		.login-info {position:absolute; right:1em; top:2em;}
+		.main-nav{background-color:#eeeeee;padding: 0.5em;}
+		.main-nav>li>a{color:var(--color);padding:0.25em 1em;}
+		.main-nav a.active {background-color:var(--color-link); color:var(--color-inverted);}
+		.main-nav ul {display:none; position:absolute; z-index:1; background-color:var(--color-background); padding:0.25em 0; box-shadow:var(--panel-shadow); min-width:10em;}
+		.main-nav ul a {display:block; padding:0.25em 1em;}
+		.main-nav ul a:hover {background-color:#eee;}
+		.main-nav>li:hover ul {display:block;}
 	</style>
 </head>
 <body>
-<div class="layout-page">
-	<header class="layout-header">
-		<h1 class="logo"><a href="">OriginCss</a></h1>
-		<script src="mod_login_info.js"></script>
-		<script src="main_nav.js"></script>
-	</header>
-	<div class="layout-content">
-		<div data-mod="login">
-			<script src="mod_login.js"></script>
-		</div>
-		<div data-mod="list">
-			<script src="mod_breadcrumb.js"></script>
-			<script src="mod_form_filter.js"></script>
-			<script src="mod_list_toolbar.js"></script>
-			<script src="mod_list.js"></script>
-			<script src="mod_paginate.js"></script>
-		</div>
-		<div data-mod="info"><script src="mod_info.js"></script></div>
-		<div data-mod="index"><script src="mod_index.js"></script></div>
-		<div data-mod="create"><script src="mod_create.js"></script></div>
-	</div>
-	<footer class="layout-footer">
-		<nav>
-			<a href="">Copyrights</a>
-			<a href="">Help</a>
-			<a href="">About</a>
-		</nav>
-	</footer>
-</div>
+<script src="demo-content.js"></script>
 </body>
 </html>

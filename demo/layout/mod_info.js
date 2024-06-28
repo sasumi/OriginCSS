@@ -74,8 +74,7 @@ document.write(`
         <tr class="form-submit-row">
             <th></th>
             <td>
-                <input type="submit">
-                <input type="reset">
+               <a href="" data-mod-target="list" class="button button-outline">返回列表</a>
             </td>
         </tr>
     </table>

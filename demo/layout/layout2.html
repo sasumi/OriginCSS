@@ -1,40 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="layout-2">
 <head>
 	<meta charset="UTF-8">
-	<title>layout1</title>
+	<title>layout2</title>
+	<script src="./../lib.js"></script>
 	<link rel="stylesheet" href="./../../release/default.css">
 	<style>
-		html{background-color:#eeeeee;}
-		.layout-page{background-color:var(--color-background);margin:0 auto;box-shadow:1px 1px 10px #cccccc}
-		.layout-content{padding:1em;}
-		.layout-header{}
-		.main-nav{display:flex; gap:1em; background-color:#eeeeee; padding:0.5em 1em;}
-		.main-nav a{color:var(--color); font-weight:bold;}
-
-		.logo{padding:.25em 0.5em; font-size:1.5em;}
-		.logo a{color:var(--color);display:flex;align-items:center;}
-		.logo a:before{content:"☼"; font-size:2em; margin-right:0.25em; margin-top:-0.1em;}
+		.layout-header {border-right:1px solid #eee;margin:1em 0;padding-right:0.5em;}
+		.layout-content,
+		.layout-footer {background-color:#eee;}
+		.layout-content .table-data {background-color:#fff; border:0.5em solid #fff; box-shadow:var(--panel-shadow)}
+		.main-nav{padding: 0.5em;}
+		.main-nav>li {margin-bottom:0.5em;}
+		.main-nav>li:last-child {margin-bottom:0;}
+		.main-nav>li>a{color:var(--color);padding:0.25em 1em;display:block; font-weight:bold;}
+		.main-nav>li>a.active {background-color:var(--color-link); color:var(--color-inverted)}
+		.main-nav ul a {padding:0.15em 0.5em 0.15em 2em; display:block; color:var(--color)}
 	</style>
 </head>
 <body>
-<div class="layout-page">
-	<header class="layout-header">
-		<h1 class="logo"><a href="">OriginCss</a></h1>
-		<ul class="main-nav">
-			<li><a href="">Index</a></li>
-			<li><a href="">List</a></li>
-			<li><a href="">Create</a></li>
-			<li><a href="">Info</a></li>
-		</ul>
-	</header>
-	<div class="layout-content">
-		<script src="mod_list.js"></script>
-		<script src="mod_create.js"></script>
-	</div>
-	<footer class="layout-footer">
-		<nav></nav>
-	</footer>
-</div>
+<script src="demo-content.js"></script>
 </body>
 </html>

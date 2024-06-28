@@ -45,6 +45,9 @@ html:has([data-mod="login"].mod-active) {
 	background-color:#eee;
 }
 
+html:has([data-mod="login"].mod-active) .layout-page {
+	display:block;
+}
 html:has([data-mod="login"].mod-active) .layout-header{
 	display:none;
 }

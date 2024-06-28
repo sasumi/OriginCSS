@@ -28,6 +28,10 @@
 	}
 }
 
+caption {
+	@extend .form-caption;
+}
+
 legend{
 	@extend .form-legend;
 }

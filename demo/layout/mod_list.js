@@ -15,31 +15,35 @@ document.write(`
     <tr>
         <td class="col-chk"><label><input type="checkbox" name="chk"></label></td>
         <td>1200</td>
-        <td>Jack</td>
+        <td><a href="" data-mod-target="info">Jack</a></td>
         <td class="col-num">1200.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
+            <a href="" data-mod-target="info">Info</a>
             <a href="">Update</a>
         </td>
     </tr>
     <tr>
         <td class="col-chk"><label><input type="checkbox" name="chk"></label></td>
         <td>1200</td>
-        <td>Jack</td>
+        <td><a href="" data-mod-target="info">Jack</a></td>
         <td class="col-num">1200.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
+            <a href="" data-mod-target="info">Info</a>
             <a href="">Update</a>
         </td>
     </tr>
     <tr>
         <td class="col-chk"><label><input type="checkbox" name="chk"></label></td>
         <td>1200</td>
-        <td>Jack</td>
+        <td><a href="" data-mod-target="info">Jack</a></td>
         <td class="col-num">1200.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
             <ul class="dropdown-list">
+                <li>
+            <a href="" data-mod-target="info">Info</a></li>
                 <li><a href="">Update</a></li>
                 <li><a href="">Delete</a></li>
                 <li><a href="">Confirm</a></li>
@@ -49,21 +53,23 @@ document.write(`
     <tr>
         <td class="col-chk"><label><input type="checkbox" name="chk"></label></td>
         <td>1200</td>
-        <td>Jack</td>
+        <td><a href="" data-mod-target="info">Jack</a></td>
         <td class="col-num">1200.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
+            <a href="" data-mod-target="info">Info</a>
             <a href="">Update</a>
         </td>
     </tr>
     <tr>
         <td class="col-chk"><label><input type="checkbox" name="chk"></label></td>
         <td>1200</td>
-        <td>Jack</td>
+        <td><a href="" data-mod-target="info">Jack</a></td>
         <td class="col-num">12100.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
             <ul class="dropdown-list">
+                <li><a href="" data-mod-target="info">Info</a></li>
                 <li>
                     <a href="">Update</a>
                 </li>
@@ -88,11 +94,12 @@ document.write(`
     <tr>
         <td class="col-chk"><label><input type="checkbox" name="chk"></label></td>
         <td>1200</td>
-        <td>Jack</td>
+        <td><a href="" data-mod-target="info">Jack</a></td>
         <td class="col-num">123300.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
             <ul class="dropdown-list">
+                <li><a href="" data-mod-target="info">Info</a></li>
                 <li>
                     <span>More</span>
                     <ul>

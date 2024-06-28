@@ -1,0 +1,40 @@
+//基本布局元素定义：
+//布局元素关系为：
+//  .layout-page
+//		.layout-header
+//			.layout-logo
+//			.layout-login-info
+//			.layout-main-nav
+//		.layout-content
+//		.layout-footer
+html.layout-1{
+	.layout-header{
+		display:grid;
+		justify-content:space-between;
+		grid-template-areas:
+			"logo login-info"
+			"main-nav main-nav";
+		.layout-logo{
+			grid-area:logo
+		}
+		.layout-login-info{
+			grid-area:login-info;
+			display:flex;
+			align-items:center;
+			justify-content:right
+		}
+		.layout-main-nav{
+			grid-area:main-nav;
+			.main-nav{
+				display:flex;
+				gap:1em;
+			}
+		}
+	}
+
+	.layout-content{
+	}
+	.layout-footer{
+	}
+}
+
