@@ -1,4 +1,5 @@
 //缺省变量，定义，重置样式
+@import "../src/theme/blue";
 @import "../src/default";
 @import "../src/define";
 @import "../src/reset";
@@ -26,6 +27,3 @@
 //布局
 @import "../src/layout/layout-1";
 @import "../src/layout/layout-2";
-
-//主题
-@import "../src/theme/blue";

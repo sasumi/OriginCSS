@@ -3,7 +3,7 @@
   --color: #333333;
   --color-border:#333333;
   --color-border-light:#cccccc;
-  --color-link:#056de8;
+  --color-link:#4285f4;
   --color-inverted:#ffffff;
   --color-background:#ffffff;
   --color-placeholder: #cccccc;
@@ -177,7 +177,7 @@ input[type=button]:focus,
 .button:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 1px #58a3fb, 0 0 0 3px #bbdafe;
+  box-shadow: 0 0 0 1px #a2c3fa, 0 0 0 3px white;
 }
 button.button-large,
 input[type=submit].button-large,
@@ -202,7 +202,7 @@ input[type=reset].button-weak,
 input[type=button].button-weak,
 [role=button].button-weak,
 .button.button-weak {
-  background-color: #58a3fb;
+  background-color: #a2c3fa;
   color: var(--color-background);
 }
 button.button-outline,
@@ -241,7 +241,7 @@ input[type=button]:focus,
 [role=button]:focus,
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 1px var(--color-background), 0 0 0 3px #2687fa;
+  box-shadow: 0 0 0 1px var(--color-background), 0 0 0 3px #72a4f7;
 }
 button[disabled], button.button-disabled,
 input[type=submit][disabled],
@@ -261,7 +261,7 @@ input[type=button].button-disabled,
 }
 
 input[type=reset] {
-  background-color: #58a3fb;
+  background-color: #a2c3fa;
   color: var(--color-background);
 }
 
@@ -299,7 +299,7 @@ input[type=button]:focus,
 .button:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 1px #58a3fb, 0 0 0 3px #bbdafe;
+  box-shadow: 0 0 0 1px #a2c3fa, 0 0 0 3px white;
 }
 button.button-large,
 input[type=submit].button-large,
@@ -324,7 +324,7 @@ input[type=reset].button-weak,
 input[type=button].button-weak,
 [role=button].button-weak,
 .button.button-weak {
-  background-color: #58a3fb;
+  background-color: #a2c3fa;
   color: var(--color-background);
 }
 button.button-outline,
@@ -363,7 +363,7 @@ input[type=button]:focus,
 [role=button]:focus,
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 1px var(--color-background), 0 0 0 3px #2687fa;
+  box-shadow: 0 0 0 1px var(--color-background), 0 0 0 3px #72a4f7;
 }
 button[disabled], button.button-disabled,
 input[type=submit][disabled],
@@ -383,7 +383,7 @@ input[type=button].button-disabled,
 }
 
 input[type=reset] {
-  background-color: #58a3fb;
+  background-color: #a2c3fa;
   color: var(--color-background);
 }
 
@@ -429,7 +429,7 @@ input[type=datetime-local]:focus,
 input[type=month]:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 1px #58a3fb, 0 0 0 3px #bbdafe;
+  box-shadow: 0 0 0 1px #a2c3fa, 0 0 0 3px white;
 }
 textarea::placeholder,
 select::placeholder,
@@ -590,7 +590,7 @@ input[type=file]::file-selector-button {
 input[type=file]::file-selector-button:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 1px #58a3fb, 0 0 0 3px #bbdafe;
+  box-shadow: 0 0 0 1px #a2c3fa, 0 0 0 3px white;
 }
 
 .form-caption, .info-table caption, .table-data caption, caption, .form-legend:not(caption), legend:not(caption) {
@@ -1111,6 +1111,7 @@ html.layout-1 .layout-header .layout-main-nav .main-nav {
   display: flex;
   gap: 1em;
 }
+
 html.layout-2 .layout-page {
   display: grid;
   grid-template-areas: "header content" "header footer";
