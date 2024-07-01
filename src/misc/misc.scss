@@ -1,6 +1,17 @@
 @charset "UTF-8";
-.nowrap {white-space:nowrap}
-.hide {display:none;}
-.fr {float:right}
-.fl {float:left;}
-.center {text-align:center}
+.nowrap{white-space:nowrap}
+.hide{display:none;}
+.fr{float:right}
+.fl{float:left;}
+.center{text-align:center}
+.clearfix:after{content:""; display:block; clear:both;}
+.link{color:var(--color-link); cursor:pointer;}
+
+.ellipsis{
+	--ellipsis-line:1;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-inline-box;
+	-webkit-line-clamp:var(--ellipsis-line);
+	-webkit-box-orient:vertical;
+}

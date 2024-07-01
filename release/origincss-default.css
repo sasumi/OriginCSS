@@ -114,6 +114,7 @@ html {
 
 a {
   color: var(--color-link);
+  cursor: pointer;
 }
 
 code {
@@ -160,6 +161,7 @@ input[type=button],
   border-radius: var(--element-border-radius);
   user-select: none;
   transition: all 0.1s linear;
+  white-space: nowrap;
   padding: 0 1em;
   display: inline-flex;
   align-items: center;
@@ -282,6 +284,7 @@ input[type=button],
   border-radius: var(--element-border-radius);
   user-select: none;
   transition: all 0.1s linear;
+  white-space: nowrap;
   padding: 0 1em;
   display: inline-flex;
   align-items: center;
@@ -1090,6 +1093,26 @@ progress:not([value]):after {
   text-align: center;
 }
 
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.link {
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+.ellipsis {
+  --ellipsis-line:1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: var(--ellipsis-line);
+  -webkit-box-orient: vertical;
+}
+
 html.layout-1 .layout-header {
   display: grid;
   justify-content: space-between;
@@ -1137,4 +1160,4 @@ html.layout-2 .layout-page .layout-footer {
   grid-area: footer;
 }
 
-/*# sourceMappingURL=default.css.map */
+/*# sourceMappingURL=origincss-default.css.map */

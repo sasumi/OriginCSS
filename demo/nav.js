@@ -1,6 +1,6 @@
 document.write(`
 <h1>OriginCSS Demo</h1>
-<link rel="stylesheet" href="./../release/default.css">
+<link rel="stylesheet" href="./../release/origincss-default.css">
 <header class="layout-header">
     <nav class="main-nav">
         <a href="index.html">Index</a>
