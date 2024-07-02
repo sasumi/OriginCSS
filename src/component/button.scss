@@ -10,6 +10,7 @@ input[type=button],
 .button{
 	@include shape-element;
 
+	min-width:var(--button-min-width);
 	white-space:nowrap;
 	padding:0 1em;
 	display:inline-flex;

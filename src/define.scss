@@ -28,6 +28,7 @@
   --element-border-radius:#{$element-border-radius};
   --element-focus-border-color:var(--element-actived-color);
   --text-field-width: #{$text-field-width};
+  --button-min-width: 0;
   --form-landscape-title-width: 4em;
 
   --element-disabled-color:#{lighten($color, 20%)};

@@ -1,9 +1,6 @@
 .menu{
-	display:none;
-	position:absolute;
 	padding:0.5em 0;
 	min-width:var(--menu-min-width);
-	z-index:2;
 	background-color:var(--color-background);
 	box-shadow:var(--panel-shadow);
 	border-radius:var(--panel-radius);
@@ -61,6 +58,9 @@
 		}
 	}
 	ul{
-		@extend .menu
+		@extend .menu;
+		display:none;
+		position:absolute;
+		z-index:2;
 	}
 }

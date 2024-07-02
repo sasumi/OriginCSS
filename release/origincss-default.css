@@ -21,6 +21,7 @@
   --element-border-radius:3px;
   --element-focus-border-color:var(--element-actived-color);
   --text-field-width: 15em;
+  --button-min-width: 0;
   --form-landscape-title-width: 4em;
   --element-disabled-color:#666666;
   --element-disabled-border-color:#999999;
@@ -163,6 +164,7 @@ input[type=button],
   border-radius: var(--element-border-radius);
   user-select: none;
   transition: all 0.1s linear;
+  min-width: var(--button-min-width);
   white-space: nowrap;
   padding: 0 1em;
   display: inline-flex;
@@ -286,6 +288,7 @@ input[type=button],
   border-radius: var(--element-border-radius);
   user-select: none;
   transition: all 0.1s linear;
+  min-width: var(--button-min-width);
   white-space: nowrap;
   padding: 0 1em;
   display: inline-flex;
@@ -546,6 +549,7 @@ input[type=month][readonly]::placeholder {
 textarea {
   min-height: calc(var(--element-height) * 2);
   width: calc(var(--text-field-width) * 1.5);
+  padding: 0.25em 0.5em;
 }
 
 select[readonly] {
@@ -703,11 +707,8 @@ form.form-filter .form-row {
 }
 
 .menu, .dropdown-list ul {
-  display: none;
-  position: absolute;
   padding: 0.5em 0;
   min-width: var(--menu-min-width);
-  z-index: 2;
   background-color: var(--color-background);
   box-shadow: var(--panel-shadow);
   border-radius: var(--panel-radius);
@@ -766,6 +767,12 @@ form.form-filter .form-row {
 .dropdown-list > li:has(ul):hover ul {
   display: block;
 }
+.dropdown-list ul {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
 .otp-inputs {
   --font-size:1.25rem;
   display: flex;
@@ -953,7 +960,7 @@ progress:not([value]):after {
 }
 .table-data th, .table-data td {
   padding: 0.5em 1em;
-  border: 1px solid #cccccc;
+  border: 1px solid #ddd;
 }
 .table-data tbody tr:nth-child(even) {
   background-color: var(--even-row-background);
