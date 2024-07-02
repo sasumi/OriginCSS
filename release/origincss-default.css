@@ -21,6 +21,7 @@
   --element-border-radius:3px;
   --element-focus-border-color:var(--element-actived-color);
   --text-field-width: 15em;
+  --form-landscape-title-width: 4em;
   --element-disabled-color:#666666;
   --element-disabled-border-color:#999999;
   --element-disabled-backgroud-color:#cccccc;
@@ -29,6 +30,7 @@
   --table-cell-border-color:#cccccc;
   --panel-shadow:1px 3px 10px #aaaaaa82;
   --panel-radius: var(--element-border-radius);
+  --menu-min-width: 8em;
   --icon-arrow-down: url("data:image/svg+xml;utf8,<svg t='1719296430104' class='icon' viewBox='0 0 1026 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9610' width='200' height='200'><path d='M947.09025987 259.60869599c-21.52173955-19.56521777-54.78260888-17.60869599-74.34782579 1.95652178L512.7424332 648.95652177 152.7424332 261.56521778c-19.56521777-21.52173955-52.82608711-21.52173955-74.34782578-1.95652179-21.52173955 19.56521777-21.52173955 52.82608711-1.95652177 74.34782578L473.61199854 762.43478222c9.78260888 9.78260888 23.47826045 17.60869599 39.13043466 17.60869601 13.69565244 0 29.34782578-5.86956533 39.13043467-17.608696l397.17391289-428.47826046C968.61199854 312.43478222 968.61199854 279.17391289 947.09025987 259.60869599z' p-id='9611'></path></svg>");
 }
 
@@ -611,7 +613,7 @@ input[type=file]::file-selector-button:focus {
 }
 .form-legend:not(caption):before, legend:not(caption):before, .form-legend:not(caption):after, legend:not(caption):after {
   content: "";
-  border-bottom: 2px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
   width: 0.5em;
 }
 .form-legend:not(caption):after, legend:not(caption):after {
@@ -629,17 +631,20 @@ table.form-landscape {
 table.form-landscape > tbody > tr:nth-child(even) {
   background-color: var(--even-row-background);
 }
-table.form-landscape > tbody > tr:has(td input) th {
+table.form-landscape > tbody > tr:has(td input) > th {
   line-height: var(--element-height);
 }
 table.form-landscape > tbody > tr > th {
-  width: 4em;
+  width: var(--form-landscape-title-width);
   white-space: nowrap;
   padding: 0.5em 1em 0.5em 0.5em;
   vertical-align: top;
 }
 table.form-landscape > tbody > tr > td {
   padding: 0.5em 0;
+}
+table.form-landscape > tfoot > tr > td {
+  padding-top: 1em;
 }
 
 table.form-portrait {
@@ -653,11 +658,12 @@ table.form-portrait > tbody > tr > td {
   display: block;
   margin-bottom: 1.5em;
 }
-table.form-portrait .form-submit-row td {
+table.form-portrait > tfoot > tr > td {
   display: flex;
+  padding-top: 1em;
   gap: 1em;
 }
-table.form-portrait .form-submit-row td > * {
+table.form-portrait > tfoot > tr > td > * {
   flex: 1;
 }
 table.form-portrait select,
@@ -700,7 +706,7 @@ form.form-filter .form-row {
   display: none;
   position: absolute;
   padding: 0.5em 0;
-  min-width: 8em;
+  min-width: var(--menu-min-width);
   z-index: 2;
   background-color: var(--color-background);
   box-shadow: var(--panel-shadow);

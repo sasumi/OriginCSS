@@ -28,6 +28,7 @@
   --element-border-radius:#{$element-border-radius};
   --element-focus-border-color:var(--element-actived-color);
   --text-field-width: #{$text-field-width};
+  --form-landscape-title-width: 4em;
 
   --element-disabled-color:#{lighten($color, 20%)};
   --element-disabled-border-color:#{lighten($color, 40%)};
@@ -41,6 +42,9 @@
   --table-cell-border-color:#cccccc;
   --panel-shadow:1px 3px 10px #aaaaaa82;
   --panel-radius: var(--element-border-radius);
+
+  //menu
+  --menu-min-width: 8em;
 
   //icon
   --icon-arrow-down: url("data:image/svg+xml;utf8,#{$icon-arrow-down}");

@@ -20,7 +20,7 @@
 	&:before,
 	&:after{
 		content:"";
-		border-bottom:2px solid var(--color-border-light);
+		border-bottom:1px solid var(--color-border-light);
 		width:.5em;
 	}
 	&:after{content:"";
@@ -28,7 +28,7 @@
 	}
 }
 
-caption {
+caption{
 	@extend .form-caption;
 }
 
@@ -46,11 +46,11 @@ table.form-landscape{
 		> tr:nth-child(even){
 			background-color:var(--even-row-background);
 		}
-		> tr:has(td input) th{
+		> tr:has(td input) > th{
 			line-height:var(--element-height);
 		}
 		> tr > th{
-			width:4em;
+			width:var(--form-landscape-title-width);
 			white-space:nowrap;
 			padding:0.5em 1em 0.5em 0.5em;
 			vertical-align:top;
@@ -58,6 +58,10 @@ table.form-landscape{
 		> tr > td{
 			padding:0.5em 0;
 		}
+	}
+
+	> tfoot > tr > td{
+		padding-top:1em;
 	}
 }
 
@@ -77,11 +81,12 @@ table.form-portrait{
 		}
 	}
 
-	.form-submit-row td{
+	> tfoot > tr > td{
 		display:flex;
+		padding-top:1em;
 		gap:1em;
 	}
-	.form-submit-row td > *{
+	> tfoot > tr > td > *{
 		flex:1;
 	}
 

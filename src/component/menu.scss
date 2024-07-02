@@ -2,7 +2,7 @@
 	display:none;
 	position:absolute;
 	padding:0.5em 0;
-	min-width:8em;
+	min-width:var(--menu-min-width);
 	z-index:2;
 	background-color:var(--color-background);
 	box-shadow:var(--panel-shadow);
