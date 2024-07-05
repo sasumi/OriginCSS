@@ -13,6 +13,7 @@
 	> li > a,
 	> li > span{
 		display:block;
+		cursor:pointer;
 		color:var(--color);
 		padding:0.35em 1em;
 		white-space:nowrap;
