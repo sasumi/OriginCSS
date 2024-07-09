@@ -1,5 +1,5 @@
 .table-data{
-	caption {
+	caption{
 		@extend .form-caption;
 	}
 	th{
@@ -7,7 +7,7 @@
 	}
 	th, td{
 		padding:0.5em 1em;
-		border:1px solid #ddd;
+		border:1px solid #dddddd;
 	}
 	tbody tr:nth-child(even){
 		background-color:var(--even-row-background);
@@ -33,7 +33,8 @@
 			box-sizing:border-box
 		}
 	}
-	.col-op {
+	.col-min,
+	.col-op{
 		width:1em;
 		white-space:nowrap;
 	}
@@ -46,6 +47,10 @@
 		text-align:right;
 	}
 }
+
+/**
+ * 表格固定头部、固定脚步、固定第一栏
+ */
 .table-fixed-head,
 .table-fixed-footer{text-align:left;position:relative;border-collapse:collapse;}
 .table-fixed-head thead,
@@ -55,6 +60,28 @@
 .table-fixed-head thead{top:-8px}
 .table-fixed-footer tfoot{bottom:-10px;}
 .table-fixed-first-column tr > th:first-child, .fixed-first-column tr > td:first-child{position:sticky;left:0;background-color:#ffffffbd;backdrop-filter:blur(2px);z-index:var(--fixed-column-zindex);}
+
+/**
+ * 表格数据为空时自动填充
+ */
+.table-empty-fill{
+	--placeholder:"- 没有项目 -";
+	&:not(:has(tbody tr)){
+		position:relative;
+		min-height:var(--table-empty-min-height);
+	}
+	tbody:not(:has(tr)){
+		display:block;
+		position:absolute;
+		width:100%;
+		&:after{content:var(--placeholder);
+			display:block;
+			padding:1em;
+			text-align:center;
+			opacity:0.5;
+		}
+	}
+}
 
 .info-table{
 	width:100%;

@@ -28,6 +28,7 @@
   --element-disabled-backgroud-color:#cccccc;
   --fixed-header-zindex:2;
   --fixed-column-zindex:3;
+  --table-empty-min-height: 8em;
   --table-cell-border-color:#cccccc;
   --panel-shadow:1px 3px 10px #aaaaaa82;
   --panel-radius: var(--element-border-radius);
@@ -726,7 +727,7 @@ form.form-filter > .form-row {
   display: block;
   cursor: pointer;
   color: var(--color);
-  padding: 0.35em 1em;
+  padding: 0.35em 1.5em 0.35em 1em;
   white-space: nowrap;
 }
 .menu > li > a:hover, .dropdown-list ul > li > a:hover,
@@ -964,7 +965,7 @@ progress:not([value]):after {
 }
 .table-data th, .table-data td {
   padding: 0.5em 1em;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
 }
 .table-data tbody tr:nth-child(even) {
   background-color: var(--even-row-background);
@@ -990,6 +991,7 @@ progress:not([value]):after {
   padding: 0 0.75em;
   box-sizing: border-box;
 }
+.table-data .col-min,
 .table-data .col-op {
   width: 1em;
   white-space: nowrap;
@@ -1003,6 +1005,9 @@ progress:not([value]):after {
   text-align: right;
 }
 
+/**
+ * 表格固定头部、固定脚步、固定第一栏
+ */
 .table-fixed-head,
 .table-fixed-footer {
   text-align: left;
@@ -1037,6 +1042,29 @@ progress:not([value]):after {
   background-color: rgba(255, 255, 255, 0.7411764706);
   backdrop-filter: blur(2px);
   z-index: var(--fixed-column-zindex);
+}
+
+/**
+ * 表格数据为空时自动填充
+ */
+.table-empty-fill {
+  --placeholder:"- 没有项目 -";
+}
+.table-empty-fill:not(:has(tbody tr)) {
+  position: relative;
+  min-height: var(--table-empty-min-height);
+}
+.table-empty-fill tbody:not(:has(tr)) {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+.table-empty-fill tbody:not(:has(tr)):after {
+  content: var(--placeholder);
+  display: block;
+  padding: 1em;
+  text-align: center;
+  opacity: 0.5;
 }
 
 .info-table {
