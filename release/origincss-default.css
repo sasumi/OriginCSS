@@ -685,11 +685,11 @@ table.form-filter {
 table.form-filter > tbody {
   display: flex;
   flex-wrap: wrap;
+  gap: 1em;
 }
 table.form-filter > tbody > tr {
   line-height: var(--element-height);
   display: flex;
-  gap: 0.5em;
 }
 table.form-filter > tbody > tr > th {
   white-space: nowrap;
@@ -997,6 +997,7 @@ progress:not([value]):after {
   padding: 0 0.75em;
   box-sizing: border-box;
 }
+.table-data tr:has(.menu-dropdown) td,
 .table-data .col-min,
 .table-data .col-op {
   width: 1em;

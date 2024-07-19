@@ -100,13 +100,13 @@ table.form-filter {
 	>tbody {
 		display:flex;
 		flex-wrap:wrap;
+		gap:1em;
 		>tr {
 			line-height:var(--element-height);
 			>th {
 				white-space:nowrap;
 			}
 			display:flex;
-			gap:0.5em;
 		}
 	}
 }
