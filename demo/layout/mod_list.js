@@ -41,7 +41,7 @@ document.write(`
         <td class="col-num">1200.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
-            <ul class="dropdown-list">
+            <ul class="menu-dropdown">
                 <li>
             <a href="" data-mod-target="info">Info</a></li>
                 <li><a href="">Update</a></li>
@@ -68,7 +68,7 @@ document.write(`
         <td class="col-num">12100.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
-            <ul class="dropdown-list">
+            <ul class="menu-dropdown">
                 <li><a href="" data-mod-target="info">Info</a></li>
                 <li>
                     <a href="">Update</a>
@@ -98,7 +98,7 @@ document.write(`
         <td class="col-num">123300.00</td>
         <td>Hello Jack</td>
         <td class="col-op">
-            <ul class="dropdown-list">
+            <ul class="menu-dropdown">
                 <li><a href="" data-mod-target="info">Info</a></li>
                 <li>
                     <span>More</span>

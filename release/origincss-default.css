@@ -7,6 +7,7 @@
   --color-inverted:#ffffff;
   --color-background:#ffffff;
   --color-placeholder: #cccccc;
+  --color-seperator:#cccccc;
   --even-row-background: #eeeeee59;
   --font-size:0.8rem;
   --font-family:-apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
@@ -14,7 +15,7 @@
   --line-height:1.6;
   --font-bold:600;
   --element-actived-color:var(--color-link);
-  --element-height:2.25em;
+  --element-height:2.5em;
   --element-border-color:#999999;
   --element-border-right-color:#cccccc;
   --element-border-bottom-color:#cccccc;
@@ -656,6 +657,10 @@ table.form-landscape > tfoot > tr > td {
 
 table.form-portrait {
   width: 100%;
+  --text-field-width:100%;
+}
+table.form-portrait textarea {
+  width: var(--text-field-width);
 }
 table.form-portrait > tbody > tr > th {
   display: block;
@@ -673,33 +678,21 @@ table.form-portrait > tfoot > tr > td {
 table.form-portrait > tfoot > tr > td > * {
   flex: 1;
 }
-table.form-portrait select,
-table.form-portrait textarea,
-table.form-portrait input[type=text],
-table.form-portrait input[type=search],
-table.form-portrait input[type=password],
-table.form-portrait input[type=url],
-table.form-portrait input[type=tel],
-table.form-portrait input[type=address],
-table.form-portrait input[type=number],
-table.form-portrait input[type=time],
-table.form-portrait input[type=date],
-table.form-portrait input[type=datetime-local],
-table.form-portrait input[type=month] {
-  width: 100%;
-}
 
-form.form-filter {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-  align-items: center;
-  --text-field-width:12em;
+table.form-filter {
+  --text-field-width: 10.5em;
 }
-form.form-filter > .form-row {
+table.form-filter > tbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+table.form-filter > tbody > tr {
+  line-height: var(--element-height);
   display: flex;
   gap: 0.5em;
-  align-items: center;
+}
+table.form-filter > tbody > tr > th {
+  white-space: nowrap;
 }
 
 .image-grid-background {
@@ -709,72 +702,84 @@ form.form-filter > .form-row {
   background-image: linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee 100%), linear-gradient(45deg, #eeeeee 25%, white 25%, white 75%, #eeeeee 75%, #eeeeee 100%);
 }
 
-.menu, .dropdown-list ul {
+.menu, .menu-dropdown ul {
   padding: 0.5em 0;
   min-width: var(--menu-min-width);
   background-color: var(--color-background);
   box-shadow: var(--panel-shadow);
   border-radius: var(--panel-radius);
 }
-.menu > li.sep, .dropdown-list ul > li.sep {
+.menu > li.sep, .menu-dropdown ul > li.sep {
   border-top: 1px solid var(--table-cell-border-color);
   opacity: 0.5;
   margin: 0.25em 0.75em;
 }
-.menu > li > a, .dropdown-list ul > li > a,
+.menu > li > a, .menu-dropdown ul > li > a,
 .menu > li > span,
-.dropdown-list ul > li > span {
+.menu-dropdown ul > li > span {
   display: block;
   cursor: pointer;
-  color: var(--color);
   padding: 0.35em 1.5em 0.35em 1em;
   white-space: nowrap;
 }
-.menu > li > a:hover, .dropdown-list ul > li > a:hover,
+.menu > li > a:hover, .menu-dropdown ul > li > a:hover,
 .menu > li > span:hover,
-.dropdown-list ul > li > span:hover {
+.menu-dropdown ul > li > span:hover {
   background-color: #f7f7f7;
   text-shadow: 1px 1px 1px white;
 }
 
-.dropdown-list {
-  --gap:1em;
+.menu-dropdown {
+  --gap:2em;
+  --trigger-content:"v";
+  --trigger-font-family:"serif";
+  --menu-zindex:2;
+  --menu-justify-right:inherit;
+  --menu-justify-left:0;
   display: inline-flex;
+  gap: var(--gap);
 }
-.dropdown-list > li:before {
-  content: "";
-  height: 80%;
-  border-left: 1px solid #cccccc;
-  margin: 0 calc(var(--gap) * 0.5) 0 calc(var(--gap) * 0.5);
-  display: inline-block;
-  vertical-align: middle;
+.menu-dropdown > li {
+  display: flex;
+  align-items: center;
 }
-.dropdown-list > li:first-child:before {
-  display: none;
-}
-.dropdown-list > li:has(ul) {
-  padding-right: 0.5em;
-  position: relative;
-}
-.dropdown-list > li:has(ul) span {
+.menu-dropdown > li > span {
+  white-space: nowrap;
   cursor: default;
 }
-.dropdown-list > li:has(ul):after {
-  content: "＞";
-  opacity: 0.8;
-  transform: rotate(90deg);
-  position: absolute;
-  display: inline-block;
-  font-size: 1.3em;
-  margin: -0.1em 0 0;
+.menu-dropdown > li > a {
+  white-space: nowrap;
 }
-.dropdown-list > li:has(ul):hover ul {
+.menu-dropdown > li:before {
+  content: "";
+  height: 1.25em;
+  border-left: 1px solid var(--color-seperator);
+  margin-left: calc(var(--gap) * -0.5);
+  padding-left: calc(var(--gap) * 0.5);
+}
+.menu-dropdown > li:first-child:before {
+  display: none;
+}
+.menu-dropdown > li:has(ul) {
+  position: relative;
+}
+.menu-dropdown > li:has(ul):after {
+  content: var(--trigger-content);
+  font-family: var(--trigger-font-family);
+  opacity: 0.8;
+  margin-left: 0.5em;
+  line-height: 1;
+}
+.menu-dropdown > li:has(ul):hover ul {
   display: block;
 }
-.dropdown-list ul {
+.menu-dropdown ul {
   display: none;
   position: absolute;
-  z-index: 2;
+  z-index: var(--menu-zindex);
+  top: 100%;
+  left: var(--menu-justify-left);
+  right: var(--menu-justify-right);
 }
 
 .otp-inputs {
@@ -889,12 +894,13 @@ progress {
   --slider-size:30px;
   min-width: 280px;
   height: 1em;
-  border-radius: 0;
+  border-radius: 20px;
   display: flex;
+  overflow: hidden;
 }
 
-progress:after {
-  content: attr(value) "%";
+progress:is([value]):after {
+  content: attr(value) "/" attr(max);
   display: inline-block;
   color: gray;
   margin: -4px 0 0 0.5em;

@@ -1,22 +1,26 @@
 document.write(`
 	<form class="form-filter">
-		<div class="form-row">
-			<label>Keyword:</label>
-			<input type="search" name="" id="">
-		</div>
-		<div class="form-row">
-			<label>Keyword2:</label>
-			<input type="search" name="" id="">
-		</div>
-		<div class="form-row">
-			<label>Option:</label>
-			<select name="" id="">
-				<option value="">Default Option</option>
-				<option value="">Option1</option>
-			</select>
-		</div>
-		<div class="form-row">
-			<input type="submit">
-		</div>
+		<table class="form-filter">
+			<tbody>
+				<tr>
+					<th>Keyword:</th>
+					<td><input type="search" name="" id=""></td>
+				</tr>
+				<tr>
+					<th>Keyword2:</th>
+					<td><input type="search" name="" id=""></td>
+				</tr>
+				<tr>
+					<th>Option:</th>
+				<td>	<select name="" id="">
+						<option value="">Default Option</option>
+						<option value="">Option1</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><input type="submit"></td>
+				</tr>
+			</tbody>        
+		</table>
 	</form>
 `);

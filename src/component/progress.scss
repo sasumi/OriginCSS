@@ -1,5 +1,5 @@
-progress{--slider-size:30px;min-width:280px;height:1em;border-radius:0;display:flex;}
-progress:after{content:attr(value) "%";display:inline-block;color:gray;margin:-4px 0 0 0.5em;}
+progress{--slider-size:30px;min-width:280px;height:1em;border-radius:20px;display:flex; overflow:hidden}
+progress:is([value]):after{content:attr(value) "/" attr(max);display:inline-block;color:gray;margin:-4px 0 0 0.5em;}
 progress::-webkit-progress-bar{background-color:#dddddd; }
 progress::-webkit-progress-value{background-color:var(--color-link);transition:width 1s;}
 progress:not([value]){display:block; position:relative;}

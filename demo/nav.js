@@ -6,9 +6,11 @@ document.write(`
         <a href="index.html">Index</a>
         <a href="button.html">Button</a>
         <a href="input.html">Input</a>
+        <a href="menu.html">Menu</a>
         <a href="form.html">Form</a>
         <a href="table.html">Table</a>
         <a href="otp.html">OTP</a>
+        <a href="progress.html">Progress</a>
         <a href="layout.html">Layout</a>
         <a href="code.html">Code</a>
     </nav>  

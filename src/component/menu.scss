@@ -14,7 +14,6 @@
 	> li > span{
 		display:block;
 		cursor:pointer;
-		color:var(--color);
 		padding:0.35em 1.5em 0.35em 1em;
 		white-space:nowrap;
 		&:hover{
@@ -24,35 +23,48 @@
 	}
 }
 
-.dropdown-list{
-	--gap:1em;
+.menu-dropdown{
+	--gap:2em;
+	--trigger-content:"v";
+	--trigger-font-family:"serif";
+	--menu-zindex:2;
+	--menu-justify-right:inherit; //靠右对齐设置为0，否则设置为inherit
+	--menu-justify-left:0; //靠左对齐设置为0，否则设置为inherit
+
+	> li{
+		display:flex;
+		align-items:center;
+		>span {
+			white-space:nowrap;
+			cursor:default;
+		}
+		>a{
+			white-space:nowrap;
+		}
+	}
+
 	display:inline-flex;
+	gap:var(--gap);
+
 	> li:before{
 		content:"";
-		height:80%;
-		border-left:1px solid #cccccc;
-		margin:0 calc(var(--gap) * 0.5) 0 calc(var(--gap) * 0.5);
-		display:inline-block;
-		vertical-align:middle;
+		height:1.25em;
+		border-left:1px solid var(--color-seperator);
+		margin-left:calc(var(--gap) * -0.5);
+		padding-left:calc(var(--gap) * 0.5);
 	}
 	> li:first-child:before{
 		display:none;
 	}
 
 	> li:has(ul){
-		padding-right:0.5em;
 		position:relative;
-		span{
-			cursor:default;
-		}
 		&:after{
-			content:"＞";
+			content:var(--trigger-content);
+			font-family:var(--trigger-font-family);
 			opacity:0.8;
-			transform:rotate(90deg);
-			position:absolute;
-			display:inline-block;
-			font-size:1.3em;
-			margin:-0.1em 0 0;
+			margin-left:0.5em;
+			line-height:1;
 		}
 		&:hover ul{
 			display:block;
@@ -62,6 +74,9 @@
 		@extend .menu;
 		display:none;
 		position:absolute;
-		z-index:2;
+		z-index:var(--menu-zindex);
+		top:100%;
+		left:var(--menu-justify-left);
+		right:var(--menu-justify-right);
 	}
 }
