@@ -688,6 +688,7 @@ table.form-filter > tbody {
   gap: 1em;
 }
 table.form-filter > tbody > tr {
+  gap: 0.5em;
   line-height: var(--element-height);
   display: flex;
 }
@@ -702,33 +703,39 @@ table.form-filter > tbody > tr > th {
   background-image: linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee 100%), linear-gradient(45deg, #eeeeee 25%, white 25%, white 75%, #eeeeee 75%, #eeeeee 100%);
 }
 
-.menu, .menu-dropdown ul {
+/**
+ * 菜单面板，结构：ul.menu>li>a|span
+ */
+.menu, .menu-dropdown > li ul {
   padding: 0.5em 0;
   min-width: var(--menu-min-width);
   background-color: var(--color-background);
   box-shadow: var(--panel-shadow);
   border-radius: var(--panel-radius);
 }
-.menu > li.sep, .menu-dropdown ul > li.sep {
+.menu > li.sep, .menu-dropdown > li ul > li.sep {
   border-top: 1px solid var(--table-cell-border-color);
   opacity: 0.5;
   margin: 0.25em 0.75em;
 }
-.menu > li > a, .menu-dropdown ul > li > a,
+.menu > li > a, .menu-dropdown > li ul > li > a,
 .menu > li > span,
-.menu-dropdown ul > li > span {
+.menu-dropdown > li ul > li > span {
   display: block;
   cursor: pointer;
   padding: 0.35em 1.5em 0.35em 1em;
   white-space: nowrap;
 }
-.menu > li > a:hover, .menu-dropdown ul > li > a:hover,
+.menu > li > a:hover, .menu-dropdown > li ul > li > a:hover,
 .menu > li > span:hover,
-.menu-dropdown ul > li > span:hover {
+.menu-dropdown > li ul > li > span:hover {
   background-color: #f7f7f7;
   text-shadow: 1px 1px 1px white;
 }
 
+/**
+ * 下拉菜单，结构：ul.menu-dropdown>li>ul
+ */
 .menu-dropdown {
   --gap:2em;
   --trigger-content:"v";
@@ -749,6 +756,14 @@ table.form-filter > tbody > tr > th {
 }
 .menu-dropdown > li > a {
   white-space: nowrap;
+}
+.menu-dropdown > li ul {
+  display: none;
+  position: absolute;
+  z-index: var(--menu-zindex);
+  top: 100%;
+  left: var(--menu-justify-left);
+  right: var(--menu-justify-right);
 }
 .menu-dropdown > li:before {
   content: "";
@@ -773,13 +788,47 @@ table.form-filter > tbody > tr > th {
 .menu-dropdown > li:has(ul):hover ul {
   display: block;
 }
-.menu-dropdown ul {
-  display: none;
+
+/**
+ * 按钮下拉菜单
+ */
+.button-dropdown {
+  --trigger-content:"v";
+  --trigger-font-family:"serif";
+  display: inline-block;
+  position: relative;
+}
+.button-dropdown:after {
+  color: var(--color-inverted);
+  content: var(--trigger-content);
+  font-family: var(--trigger-font-family);
+  height: var(--element-height);
+  box-sizing: border-box;
+  line-height: var(--element-height);
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  right: 0.75em;
   position: absolute;
-  z-index: var(--menu-zindex);
-  top: 100%;
-  left: var(--menu-justify-left);
-  right: var(--menu-justify-right);
+  zoom: 0.8;
+  margin-top: 0.25em;
+  pointer-events: none;
+}
+.button-dropdown .button {
+  padding-right: 1.8em;
+}
+.button-dropdown .menu, .button-dropdown .menu-dropdown > li ul, .menu-dropdown > li .button-dropdown ul {
+  display: none;
+}
+.button-dropdown:not(:has([disabled])):hover .menu, .button-dropdown:not(:has([disabled])):hover .menu-dropdown > li ul, .menu-dropdown > li .button-dropdown:not(:has([disabled])):hover ul {
+  display: block;
+  position: absolute;
+}
+.button-dropdown:not(:has([disabled])):hover:after {
+  transform: rotate(180deg);
+}
+.button-dropdown:has(.button-outline):after, .button-dropdown:has(.button-plain):after {
+  color: var(--color-link);
 }
 
 .otp-inputs {
@@ -894,7 +943,6 @@ progress {
   --slider-size:30px;
   min-width: 280px;
   height: 1em;
-  border-radius: 20px;
   display: flex;
   overflow: hidden;
 }

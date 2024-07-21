@@ -23,7 +23,8 @@
 		border-bottom:1px solid var(--color-border-light);
 		width:.5em;
 	}
-	&:after{content:"";
+	&:after{
+		content:"";
 		flex:1;
 	}
 }
@@ -102,6 +103,7 @@ table.form-filter {
 		flex-wrap:wrap;
 		gap:1em;
 		>tr {
+			gap:0.5em;
 			line-height:var(--element-height);
 			>th {
 				white-space:nowrap;
