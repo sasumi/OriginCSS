@@ -13,6 +13,22 @@
 		.main-nav ul a {display:block; padding:0.25em 1em;}
 		.main-nav ul a:hover {background-color:#eee;}
 		.main-nav>li:hover ul {display:block;}
+
+		div[class^=layout] {
+			position:relative;
+		}
+		div[class^=layout]:hover {
+			outline:2px solid green;
+		}
+		div[class^=layout]:hover:before {
+			content:attr(class);
+			position:absolute;
+			background-color:green;
+			padding:0.2em 0.5em;
+			color:white;
+			left:0.1em;
+			top:0.1em;
+		}
 	</style>
 </head>
 <body>

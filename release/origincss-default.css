@@ -680,7 +680,17 @@ table.form-portrait > tfoot > tr > td > * {
 }
 
 table.form-filter {
-  --text-field-width: 10.5em;
+  --text-field-width:10.5em;
+}
+table.form-filter input[type=number] {
+  --text-field-width:6em;
+  text-align: center;
+}
+table.form-filter input[type=date] {
+  --text-field-width:9em;
+}
+table.form-filter input[type=datetime-local] {
+  --text-field-width:12em;
 }
 table.form-filter > tbody {
   display: flex;
@@ -706,28 +716,30 @@ table.form-filter > tbody > tr > th {
 /**
  * 菜单面板，结构：ul.menu>li>a|span
  */
-.menu, .menu-dropdown > li ul {
+.menu, .button-dropdown ul, .menu-dropdown > li ul {
   padding: 0.5em 0;
   min-width: var(--menu-min-width);
   background-color: var(--color-background);
   box-shadow: var(--panel-shadow);
   border-radius: var(--panel-radius);
 }
-.menu > li.sep, .menu-dropdown > li ul > li.sep {
+.menu > li.sep, .button-dropdown ul > li.sep, .menu-dropdown > li ul > li.sep {
   border-top: 1px solid var(--table-cell-border-color);
   opacity: 0.5;
   margin: 0.25em 0.75em;
 }
-.menu > li > a, .menu-dropdown > li ul > li > a,
+.menu > li > a, .button-dropdown ul > li > a, .menu-dropdown > li ul > li > a,
 .menu > li > span,
+.button-dropdown ul > li > span,
 .menu-dropdown > li ul > li > span {
   display: block;
   cursor: pointer;
   padding: 0.35em 1.5em 0.35em 1em;
   white-space: nowrap;
 }
-.menu > li > a:hover, .menu-dropdown > li ul > li > a:hover,
+.menu > li > a:hover, .button-dropdown ul > li > a:hover, .menu-dropdown > li ul > li > a:hover,
 .menu > li > span:hover,
+.button-dropdown ul > li > span:hover,
 .menu-dropdown > li ul > li > span:hover {
   background-color: #f7f7f7;
   text-shadow: 1px 1px 1px white;
@@ -795,6 +807,8 @@ table.form-filter > tbody > tr > th {
 .button-dropdown {
   --trigger-content:"v";
   --trigger-font-family:"serif";
+  --menu-justify-right:inherit;
+  --menu-justify-left:0;
   display: inline-block;
   position: relative;
 }
@@ -817,12 +831,14 @@ table.form-filter > tbody > tr > th {
 .button-dropdown .button {
   padding-right: 1.8em;
 }
-.button-dropdown .menu, .button-dropdown .menu-dropdown > li ul, .menu-dropdown > li .button-dropdown ul {
+.button-dropdown ul {
   display: none;
-}
-.button-dropdown:not(:has([disabled])):hover .menu, .button-dropdown:not(:has([disabled])):hover .menu-dropdown > li ul, .menu-dropdown > li .button-dropdown:not(:has([disabled])):hover ul {
-  display: block;
   position: absolute;
+  left: var(--menu-justify-left);
+  right: var(--menu-justify-right);
+}
+.button-dropdown:not(:has([disabled])):hover > ul {
+  display: block;
 }
 .button-dropdown:not(:has([disabled])):hover:after {
   transform: rotate(180deg);

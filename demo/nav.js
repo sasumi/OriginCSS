@@ -11,6 +11,7 @@ document.write(`
         <a href="table.html">Table</a>
         <a href="otp.html">OTP</a>
         <a href="progress.html">Progress</a>
+        <a href="scrollbar.html">Scrollbar</a>
         <a href="layout.html">Layout</a>
         <a href="code.html">Code</a>
     </nav>  

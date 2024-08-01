@@ -35,7 +35,7 @@
 <h2>Button Dropdown</h2>
 <div class="button-dropdown">
 	<span class="button " data-cmd="save-collection" tabindex="0">保存</span>
-	<ul class="menu">
+	<ul>
 		<li><span class="link" data-cmd="save-collection">保存查询</span></li>
 		<li data-cmd="export-xlsx"><span>导出为Excel格式</span></li>
 		<li class="sep"></li>
@@ -46,7 +46,7 @@
 
 <div class="button-dropdown">
 	<span class="button button-outline" data-cmd="save-collection" tabindex="0">保存</span>
-	<ul class="menu">
+	<ul>
 		<li><span class="link" data-cmd="save-collection">保存查询</span></li>
 		<li data-cmd="export-xlsx"><span>导出为Excel格式</span></li>
 		<li class="sep"></li>
@@ -57,7 +57,28 @@
 
 <div class="button-dropdown">
 	<span class="button button-plain" data-cmd="save-collection" tabindex="0">保存</span>
-	<ul class="menu">
+	<ul>
+		<li><span class="link" data-cmd="save-collection">保存查询</span></li>
+		<li data-cmd="export-xlsx"><span>导出为Excel格式</span></li>
+		<li class="sep"></li>
+		<li><span class="link">创建报告</span></li>
+		<li><span class="link">保存为独立页面</span></li>
+	</ul>
+</div>
+
+
+
+<h2>Button(trigger) Dropdown</h2>
+
+<style>
+	#mybtn .button:before {content:"v"}
+	#mybtn .button {padding:0 1em;}
+	#mybtn:after {display:none !important;}
+</style>
+
+<div class="button-dropdown" id="mybtn">
+	<span class="button button-outline" data-cmd="save-collection" tabindex="0"></span>
+	<ul>
 		<li><span class="link" data-cmd="save-collection">保存查询</span></li>
 		<li data-cmd="export-xlsx"><span>导出为Excel格式</span></li>
 		<li class="sep"></li>

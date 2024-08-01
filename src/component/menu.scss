@@ -93,6 +93,9 @@
 .button-dropdown{
 	--trigger-content:"v";
 	--trigger-font-family:"serif";
+	--menu-justify-right:inherit; //靠右对齐设置为0，否则设置为inherit
+	--menu-justify-left:0; //靠左对齐设置为0，否则设置为inherit
+
 	display:inline-block;
 	position:relative;
 	&:after{
@@ -112,11 +115,19 @@
 		pointer-events:none;
 	}
 	.button{padding-right:1.8em;}
-	.menu{display:none;}
-	&:not(:has([disabled])):hover .menu{display:block; position:absolute;}
+
+	ul{
+		@extend .menu;
+		display:none;
+		position:absolute;
+		left:var(--menu-justify-left);
+		right:var(--menu-justify-right);
+	}
+
+	&:not(:has([disabled])):hover > ul{display:block;}
 	&:not(:has([disabled])):hover:after{transform:rotate(180deg)}
 	&:has(.button-outline):after,
-	&:has(.button-plain):after {
+	&:has(.button-plain):after{
 		color:var(--color-link);
 	}
 }
