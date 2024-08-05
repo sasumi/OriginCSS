@@ -764,7 +764,6 @@ table.form-filter > tbody > tr > th {
 }
 .menu-dropdown > li > span {
   white-space: nowrap;
-  cursor: default;
 }
 .menu-dropdown > li > a {
   white-space: nowrap;
@@ -957,10 +956,13 @@ table.form-filter > tbody > tr > th {
 
 progress {
   --slider-size:30px;
-  min-width: 280px;
-  height: 1em;
-  display: flex;
+  display: inline-flex;
+  border-radius: 20px;
   overflow: hidden;
+}
+
+progress[value] {
+  border-radius: 0;
 }
 
 progress:is([value]):after {
@@ -980,7 +982,6 @@ progress::-webkit-progress-value {
 }
 
 progress:not([value]) {
-  display: block;
   position: relative;
 }
 
@@ -993,10 +994,6 @@ progress:not([value]):before {
   animation: progress-waiting 5s infinite;
   height: 100%;
   position: absolute;
-}
-
-progress:not([value]):after {
-  content: "";
 }
 
 @keyframes progress-waiting {
@@ -1160,11 +1157,12 @@ progress:not([value]):after {
 .state-tag {
   background-color: #eeeeee;
   display: inline-block;
-  padding: 0.05em 0.5em;
+  padding: 0.35em 0.5em;
   border-radius: 5px;
   zoom: 0.9;
   white-space: nowrap;
   border: 1px solid #cccccc;
+  line-height: 1;
 }
 
 .state-tag[data-state=draft] {
