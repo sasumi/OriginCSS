@@ -16,12 +16,17 @@
 	> li > a,
 	> li > span{
 		display:block;
-		cursor:pointer;
 		padding:0.35em 1.5em 0.35em 1em;
 		white-space:nowrap;
-		&:hover{
-			background-color:lighten($color, 77%);
-			text-shadow:1px 1px 1px white;
+		&:not([disabled]) {
+			cursor:pointer;
+			&:hover{
+				background-color:lighten($color, 77%);
+				text-shadow:1px 1px 1px white;
+			}
+		}
+		&[disabled] {
+			@include disabled-element;
 		}
 	}
 }
@@ -123,8 +128,9 @@
 		right:var(--menu-justify-right);
 	}
 
-	&:not(:has([disabled])):hover > ul{display:block;}
-	&:not(:has([disabled])):hover:after{transform:rotate(180deg)}
+	//这里不判断顶部按钮是否为disabled，直接hover显示子菜单，避免过多逻辑
+	&:hover > ul{display:block;}
+	&:hover:after{transform:rotate(180deg)}
 	&:has(.button-outline):after,
 	&:has(.button-plain):after{
 		color:var(--color-link);

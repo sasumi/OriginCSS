@@ -18,3 +18,10 @@
 		box-shadow:0 0 0 1px lighten($color-link, 20%), 0 0 0 3px lighten($color-link, 40%);
 	}
 }
+
+@mixin disabled-element{
+	opacity:0.5;
+	filter:grayscale(80%);
+	cursor:default;
+	pointer-events:none;
+}

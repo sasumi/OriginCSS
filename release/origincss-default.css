@@ -733,16 +733,30 @@ table.form-filter > tbody > tr > th {
 .button-dropdown ul > li > span,
 .menu-dropdown > li ul > li > span {
   display: block;
-  cursor: pointer;
   padding: 0.35em 1.5em 0.35em 1em;
   white-space: nowrap;
 }
-.menu > li > a:hover, .button-dropdown ul > li > a:hover, .menu-dropdown > li ul > li > a:hover,
-.menu > li > span:hover,
-.button-dropdown ul > li > span:hover,
-.menu-dropdown > li ul > li > span:hover {
+.menu > li > a:not([disabled]), .button-dropdown ul > li > a:not([disabled]), .menu-dropdown > li ul > li > a:not([disabled]),
+.menu > li > span:not([disabled]),
+.button-dropdown ul > li > span:not([disabled]),
+.menu-dropdown > li ul > li > span:not([disabled]) {
+  cursor: pointer;
+}
+.menu > li > a:not([disabled]):hover, .button-dropdown ul > li > a:not([disabled]):hover, .menu-dropdown > li ul > li > a:not([disabled]):hover,
+.menu > li > span:not([disabled]):hover,
+.button-dropdown ul > li > span:not([disabled]):hover,
+.menu-dropdown > li ul > li > span:not([disabled]):hover {
   background-color: #f7f7f7;
   text-shadow: 1px 1px 1px white;
+}
+.menu > li > a[disabled], .button-dropdown ul > li > a[disabled], .menu-dropdown > li ul > li > a[disabled],
+.menu > li > span[disabled],
+.button-dropdown ul > li > span[disabled],
+.menu-dropdown > li ul > li > span[disabled] {
+  opacity: 0.5;
+  filter: grayscale(80%);
+  cursor: default;
+  pointer-events: none;
 }
 
 /**
@@ -836,10 +850,10 @@ table.form-filter > tbody > tr > th {
   left: var(--menu-justify-left);
   right: var(--menu-justify-right);
 }
-.button-dropdown:not(:has([disabled])):hover > ul {
+.button-dropdown:hover > ul {
   display: block;
 }
-.button-dropdown:not(:has([disabled])):hover:after {
+.button-dropdown:hover:after {
   transform: rotate(180deg);
 }
 .button-dropdown:has(.button-outline):after, .button-dropdown:has(.button-plain):after {
