@@ -46,10 +46,14 @@ input[type=month]{
 		}
 	}
 }
+
 textarea{
 	min-height:calc(var(--element-height) * 2);
 	width:calc(var(--text-field-width) * 1.5);
 	padding:0.25em 0.5em;
+	@at-root [readonly] &::placeholder {
+		color:transparent;
+	}
 }
 
 //select
@@ -68,6 +72,18 @@ input[type=checkbox]{
 	vertical-align:middle;
 	position:relative;
 	bottom:2px;
+	@at-root [readonly] label:has(&:not([checked])) {
+		display:none;
+	}
+	@at-root [readonly] &:not([checked]){
+		display:none;
+	}
+	@at-root [readonly] &[checked] {
+		pointer-events:none;
+	}
+	@at-root [readonly] label:has(&[checked]){
+		pointer-events:none;
+	}
 }
 
 //label with checkbox or radio

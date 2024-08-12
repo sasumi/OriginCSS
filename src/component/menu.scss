@@ -2,6 +2,7 @@
  * 菜单面板，结构：ul.menu>li>a|span
  */
 .menu{
+	z-index:2;
 	padding:0.5em 0;
 	min-width:var(--menu-min-width);
 	background-color:var(--color-background);

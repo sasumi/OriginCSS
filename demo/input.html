@@ -279,17 +279,27 @@
 		</td>
 		<td>-</td>
 		<td readonly>
-			<input class="qwc-check" type="checkbox" name="r2"> <label>checkbox item1</label>
-			<input class="qwc-check" type="checkbox" name="r2" checked> <label>checkbox item1</label>
+			<label><input class="qwc-check" type="checkbox" name="r2"> checkbox item1</label>
+			<label><input class="qwc-check" type="checkbox" name="r2" checked> checkbox item2</label>
 		</td>
 	</tr>
 	<tr>
-		<th>Textarea</th>
+		<th>Textarea Empty</th>
 		<td><textarea placeholder="please input"></textarea></td>
 		<td><textarea placeholder="please input" disabled></textarea></td>
 		<td><textarea placeholder="please input" readonly></textarea></td>
 		<td readonly>
 			<textarea placeholder="please input"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>Textarea With Value</th>
+		<td><textarea placeholder="please input">Text</textarea></td>
+		<td><textarea placeholder="please input" disabled>Text</textarea></td>
+		<td><textarea placeholder="please input" readonly>Text</textarea></td>
+		<td readonly>
+			<textarea placeholder="please input">Text
+			Line2</textarea>
 		</td>
 	</tr>
 	</tbody>

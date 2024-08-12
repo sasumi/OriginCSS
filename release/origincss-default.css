@@ -555,6 +555,9 @@ textarea {
   width: calc(var(--text-field-width) * 1.5);
   padding: 0.25em 0.5em;
 }
+[readonly] textarea::placeholder {
+  color: transparent;
+}
 
 select[readonly] {
   pointer-events: none;
@@ -568,6 +571,25 @@ input[type=checkbox] {
   vertical-align: middle;
   position: relative;
   bottom: 2px;
+}
+[readonly] label:has(input[type=radio]:not([checked]),
+input[type=checkbox]:not([checked])) {
+  display: none;
+}
+
+[readonly] input[type=radio]:not([checked]),
+[readonly] input[type=checkbox]:not([checked]) {
+  display: none;
+}
+
+[readonly] input[type=radio][checked],
+[readonly] input[type=checkbox][checked] {
+  pointer-events: none;
+}
+
+[readonly] label:has(input[type=radio][checked],
+input[type=checkbox][checked]) {
+  pointer-events: none;
 }
 
 label > input[type=radio],
@@ -717,6 +739,7 @@ table.form-filter > tbody > tr > th {
  * 菜单面板，结构：ul.menu>li>a|span
  */
 .menu, .button-dropdown ul, .menu-dropdown > li ul {
+  z-index: 2;
   padding: 0.5em 0;
   min-width: var(--menu-min-width);
   background-color: var(--color-background);
