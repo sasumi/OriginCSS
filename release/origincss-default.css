@@ -714,6 +714,14 @@ table.form-filter input[type=date] {
 table.form-filter input[type=datetime-local] {
   --text-field-width:12em;
 }
+table.form-filter textarea:placeholder-shown {
+  padding: 0 0.5em;
+  min-height: var(--element-height);
+  line-height: var(--element-height);
+  width: var(--text-field-width);
+  resize: none;
+  overflow: hidden;
+}
 table.form-filter > tbody {
   display: flex;
   flex-wrap: wrap;
