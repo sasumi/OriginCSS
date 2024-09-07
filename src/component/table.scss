@@ -33,7 +33,7 @@
 			box-sizing:border-box
 		}
 	}
-	tr:has(.menu-dropdown) td,
+	td:has(.menu-dropdown),
 	.col-min,
 	.col-op{
 		width:1em;

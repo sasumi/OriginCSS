@@ -105,10 +105,6 @@ h1, h2, h3, h4, h5, h6, em, strong, b {
   font-weight: var(--font-bold);
 }
 
-del, ins, u, s, a, a:hover {
-  text-decoration: none;
-}
-
 html {
   color: var(--color);
   background-color: var(--color-background);
@@ -1103,7 +1099,7 @@ progress:not([value]):before {
   padding: 0 0.75em;
   box-sizing: border-box;
 }
-.table-data tr:has(.menu-dropdown) td,
+.table-data td:has(.menu-dropdown),
 .table-data .col-min,
 .table-data .col-op {
   width: 1em;
@@ -1206,7 +1202,6 @@ progress:not([value]):before {
   border-radius: 5px;
   zoom: 0.9;
   white-space: nowrap;
-  border: 1px solid #cccccc;
   line-height: 1;
 }
 
