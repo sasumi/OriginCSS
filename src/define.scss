@@ -48,6 +48,7 @@
 
   //menu
   --menu-min-width: 8em;
+  --menu-max-width: calc(--menu-min-width * 2);
 
   //icon
   --icon-arrow-down: url("data:image/svg+xml;utf8,#{$icon-arrow-down}");

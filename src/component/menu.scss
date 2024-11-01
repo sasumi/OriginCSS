@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import "element";
+
 /**
  * 菜单面板，结构：ul.menu>li>a|span
  */
@@ -5,6 +8,7 @@
 	z-index:2;
 	padding:0.5em 0;
 	min-width:var(--menu-min-width);
+	max-width:var(--menu-max-width);
 	background-color:var(--color-background);
 	box-shadow:var(--panel-shadow);
 	border-radius:var(--panel-radius);
@@ -18,7 +22,11 @@
 	> li > span{
 		display:block;
 		padding:0.35em 1.5em 0.35em 1em;
+
 		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+
 		&:not([disabled]) {
 			cursor:pointer;
 			&:hover{
@@ -29,6 +37,45 @@
 		&[disabled] {
 			@include disabled-element;
 		}
+	}
+}
+
+select.menu-select {
+	@include shape-element;
+	color:white;
+	cursor:pointer;
+	height:var(--element-height);
+	background-color:var(--color-link);
+	border:1px solid var(--color-link);
+	option {
+		color:var(--color);
+		background-color:var(--color-background);
+	}
+
+	&:not([disabled]):hover {}
+	&:focus{
+		outline:none;
+		box-shadow:0 0 0 1px var(--color-background), 0 0 0 3px lighten($color-link, 10%);
+	}
+	&[disabled] {
+		@include disabled-element;
+	}
+}
+
+select.menu-select-outline {
+	@include shape-element;
+	cursor:pointer;
+	height:var(--element-height);
+	border:1px solid var(--color-link);
+	color:var(--color-link);
+
+	&:not([disabled]):hover {}
+	&:focus{
+		outline:none;
+		box-shadow:0 0 0 1px var(--color-background), 0 0 0 3px lighten($color-link, 10%);
+	}
+	&[disabled] {
+		@include disabled-element;
 	}
 }
 

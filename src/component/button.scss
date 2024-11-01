@@ -47,10 +47,8 @@ input[type=button],
 			border-color:var(--color-link);
 		}
 	}
-	&:not([disabled]):hover {
-
-	}
 	//state
+	&:not([disabled]):hover {}
 	&:focus{
 		outline:none;
 		box-shadow:0 0 0 1px var(--color-background), 0 0 0 3px lighten($color-link, 10%);
