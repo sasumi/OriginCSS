@@ -14,6 +14,7 @@ document.write(`
         <a href="scrollbar.html">Scrollbar</a>
         <a href="layout.html">Layout</a>
         <a href="code.html">Code</a>
+        <a href="misc.html">Misc</a>
     </nav>  
 </header>
 <style>
@@ -25,7 +26,7 @@ document.write(`
     h4 {font-size:1.2rem;}
     h5 {font-size:1rem;}
     header {margin-bottom:1em; border-bottom:1px solid #ccc; padding-bottom:1em;}
-    .main-nav {display:flex; gap:1em;}
+    .main-nav {display:flex; gap:1em; flex-wrap:wrap}
     .main-nav a {display:block; padding:0.5em 2em; border:1px solid var(--color-link); border-radius:20px}
     .main-nav a.active {background-color:var(--color-link); color:white;}
 </style>

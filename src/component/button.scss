@@ -11,6 +11,7 @@ input[type=button],
 	@include shape-element;
 
 	min-width:var(--button-min-width);
+	text-decoration:none;
 	white-space:nowrap;
 	padding:0 1em;
 	line-height:1;
@@ -33,6 +34,7 @@ input[type=button],
 		background-color:lighten($color-link, 20%);
 		color:var(--color-background);
 	}
+	&[aria-label="Close"],
 	&.button-outline{
 		background-color:var(--color-background);
 		color:var(--color-link);

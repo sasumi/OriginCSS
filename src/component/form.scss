@@ -112,7 +112,7 @@ table.form-filter {
 	> tbody{
 		display:flex;
 		flex-wrap:wrap;
-		gap:1em;
+		gap:.5em 1em;
 		> tr{
 			gap:0.5em;
 			line-height:var(--element-height);

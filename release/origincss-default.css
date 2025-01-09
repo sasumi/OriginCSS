@@ -164,6 +164,7 @@ input[type=button],
   user-select: none;
   transition: all 0.1s linear;
   min-width: var(--button-min-width);
+  text-decoration: none;
   white-space: nowrap;
   padding: 0 1em;
   line-height: 1;
@@ -211,11 +212,16 @@ input[type=button].button-weak,
   background-color: #a2c3fa;
   color: var(--color-background);
 }
-button.button-outline,
+button[aria-label=Close], button.button-outline,
+input[type=submit][aria-label=Close],
 input[type=submit].button-outline,
+input[type=reset][aria-label=Close],
 input[type=reset].button-outline,
+input[type=button][aria-label=Close],
 input[type=button].button-outline,
+[role=button][aria-label=Close],
 [role=button].button-outline,
+.button[aria-label=Close],
 .button.button-outline {
   background-color: var(--color-background);
   color: var(--color-link);
@@ -289,6 +295,7 @@ input[type=button],
   user-select: none;
   transition: all 0.1s linear;
   min-width: var(--button-min-width);
+  text-decoration: none;
   white-space: nowrap;
   padding: 0 1em;
   line-height: 1;
@@ -336,11 +343,16 @@ input[type=button].button-weak,
   background-color: #a2c3fa;
   color: var(--color-background);
 }
-button.button-outline,
+button[aria-label=Close], button.button-outline,
+input[type=submit][aria-label=Close],
 input[type=submit].button-outline,
+input[type=reset][aria-label=Close],
 input[type=reset].button-outline,
+input[type=button][aria-label=Close],
 input[type=button].button-outline,
+[role=button][aria-label=Close],
 [role=button].button-outline,
+.button[aria-label=Close],
 .button.button-outline {
   background-color: var(--color-background);
   color: var(--color-link);
@@ -722,7 +734,7 @@ table.form-filter textarea:placeholder-shown:not(:focus) {
 table.form-filter > tbody {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 0.5em 1em;
 }
 table.form-filter > tbody > tr {
   gap: 0.5em;
@@ -1340,6 +1352,30 @@ progress:not([value]):before {
   display: -webkit-inline-box;
   -webkit-line-clamp: var(--ellipsis-line);
   -webkit-box-orient: vertical;
+}
+
+.empty-holder:after {
+  content: "- 没有数据 -";
+  opacity: 0.5;
+  padding: 0.25em;
+  display: block;
+}
+
+.empty-holder:has(*):after {
+  display: none;
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  --flex-list-count:4;
+  --flex-list-gap:1em;
+  gap: var(--flex-list-gap);
+}
+
+.flex-list > * {
+  box-sizing: border-box;
+  width: calc(100% / var(--flex-list-count) - (var(--flex-list-count) - 1) * var(--flex-list-gap) / var(--flex-list-count));
 }
 
 html.layout-1 .layout-header {

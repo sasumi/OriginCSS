@@ -15,3 +15,9 @@
 	-webkit-line-clamp:var(--ellipsis-line);
 	-webkit-box-orient:vertical;
 }
+
+.empty-holder:after{content:"- 没有数据 -"; opacity:0.5; padding:0.25em; display:block;}
+.empty-holder:has(*):after{display:none;}
+
+.flex-list{display:flex; flex-wrap:wrap; --flex-list-count:4; --flex-list-gap:1em; gap:var(--flex-list-gap)}
+.flex-list > *{box-sizing:border-box; width:calc(100% / var(--flex-list-count) - (var(--flex-list-count) - 1) * var(--flex-list-gap) / var(--flex-list-count));}
