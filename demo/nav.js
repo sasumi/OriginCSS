@@ -17,19 +17,7 @@ document.write(`
         <a href="misc.html">Misc</a>
     </nav>  
 </header>
-<style>
-    body {padding:0 1em 3em 1em;;}
-    h1, h2, h3, h4, h5, h6 {margin:0.5em 0;}
-    h1 {font-size:2rem;}
-    h2 {font-size:1.6rem;}
-    h3 {font-size:1.4rem;}
-    h4 {font-size:1.2rem;}
-    h5 {font-size:1rem;}
-    header {margin-bottom:1em; border-bottom:1px solid #ccc; padding-bottom:1em;}
-    .main-nav {display:flex; gap:1em; flex-wrap:wrap}
-    .main-nav a {display:block; padding:0.5em 2em; border:1px solid var(--color-link); border-radius:20px}
-    .main-nav a.active {background-color:var(--color-link); color:white;}
-</style>
+<link rel="stylesheet" href="demo.css">
 `);
 onReady(() => {
 	let f = /\w+\.html$/.exec(location.pathname);

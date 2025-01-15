@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @use 'sass:math';
+@import "input";
 
 //表单标题效果
 .form-caption{
@@ -41,7 +42,7 @@ fieldset ~ fieldset{
 	margin-top:2em;
 }
 
-table.form-landscape{
+@mixin form-landscape{
 	width:100%;
 	> tbody{
 		> tr:nth-child(even){
@@ -66,10 +67,10 @@ table.form-landscape{
 	}
 }
 
-table.form-portrait{
+@mixin form-portrait{
 	width:100%;
 	--text-field-width:100%;
-	textarea {
+	textarea{
 		width:var(--text-field-width);
 	}
 
@@ -96,18 +97,13 @@ table.form-portrait{
 	}
 }
 
-table.form-filter {
+@mixin form-inline{
 	--text-field-width:#{$text-field-width * 0.7};
 	input[type=number]{--text-field-width:6em;text-align:center;}
 	input[type=date]{--text-field-width:9em;}
 	input[type=datetime-local]{--text-field-width:12em;}
-	textarea:placeholder-shown:not(:focus) {
-		padding:0 0.5em;
-		min-height:var(--element-height);
-		line-height:var(--element-height);
-		width:var(--text-field-width);
-		resize:none;
-		overflow:hidden;
+	textarea:placeholder-shown:not(:focus){
+		@include textarea-single-line
 	}
 	> tbody{
 		display:flex;
@@ -121,5 +117,37 @@ table.form-filter {
 			}
 			display:flex;
 		}
+	}
+}
+
+//横向表单
+table.form-landscape{
+	@include form-landscape;
+}
+
+//垂直表单
+table.form-portrait{
+	@include form-portrait;
+}
+
+//内联表单
+table.form-inline{
+	@include form-inline;
+}
+
+//搜索表单（暂时不做自动）
+table.form-filter{
+	@include form-inline
+}
+
+//自动方向表单 form-orientation-auto
+@media (orientation:landscape){
+	table.form-orientation-auto{
+		@include form-landscape
+	}
+}
+@media (orientation:portrait){
+	table.form-orientation-auto{
+		@include form-portrait
 	}
 }
