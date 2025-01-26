@@ -1550,17 +1550,6 @@ progress {
   overflow: hidden;
 }
 
-progress[value] {
-  border-radius: 0;
-}
-
-progress:is([value]):after {
-  content: attr(value) "/" attr(max);
-  display: inline-block;
-  color: gray;
-  margin: -4px 0 0 0.5em;
-}
-
 progress::-webkit-progress-bar {
   background-color: #dddddd;
 }
@@ -1570,11 +1559,23 @@ progress::-webkit-progress-value {
   transition: width 1s;
 }
 
-progress:not([value]) {
+progress.with-label[value] {
+  border-radius: 0;
+  --label:attr(value) "/" attr(max);
+}
+
+progress.with-label:is([value]):after {
+  content: var(--label);
+  display: inline-block;
+  color: gray;
+  margin: -4px 0 0 0.5em;
+}
+
+progress.with-label:not([value]) {
   position: relative;
 }
 
-progress:not([value]):before {
+progress.with-label:not([value]):before {
   content: "";
   display: block;
   width: var(--slider-size);

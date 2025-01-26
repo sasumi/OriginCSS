@@ -1,10 +1,12 @@
 progress{--slider-size:30px; display:inline-flex;border-radius:20px;overflow:hidden}
-progress[value] {border-radius:0;}
-progress:is([value]):after{content:attr(value) "/" attr(max);display:inline-block;color:gray; margin:-4px 0 0 .5em;}
 progress::-webkit-progress-bar{background-color:#dddddd; }
 progress::-webkit-progress-value{background-color:var(--color-link);transition:width 1s;}
-progress:not([value]){position:relative;}
-progress:not([value]):before{content:"";display:block;width:var(--slider-size);background-color:var(--color-link); opacity:0.5; animation:progress-waiting 5s infinite;height:100%;position:absolute;}
+
+progress.with-label[value]{border-radius:0; --label:attr(value) "/" attr(max)}
+progress.with-label:is([value]):after{content:var(--label);display:inline-block;color:gray; margin:-4px 0 0 .5em;}
+progress.with-label:not([value]){position:relative;}
+progress.with-label:not([value]):before{content:"";display:block;width:var(--slider-size);background-color:var(--color-link); opacity:0.5; animation:progress-waiting 5s infinite;height:100%;position:absolute;}
+
 @keyframes progress-waiting{
 	0%{left:0;}
 	50%{left:calc(100% - var(--slider-size))}
