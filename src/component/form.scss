@@ -42,12 +42,24 @@ fieldset ~ fieldset{
 	margin-top:2em;
 }
 
+@mixin form-support-column{
+	--column-count:1;
+	--column-gap: 0.5em;
+
+	> tbody{
+		display:flex;
+		flex-wrap:wrap;
+		gap:0 var(--column-gap);
+		> tr{
+			flex:0 0 calc(100% / var(--column-count) - var(--column-gap) * (var(--column-count) - 1) / var(--column-count))
+		}
+	}
+}
+
 @mixin form-landscape{
+	//@include form-support-column;
 	width:100%;
 	> tbody{
-		> tr:nth-child(even){
-			background-color:var(--even-row-background);
-		}
 		> tr:has(td input) > th{
 			line-height:var(--element-height);
 		}
@@ -68,6 +80,7 @@ fieldset ~ fieldset{
 }
 
 @mixin form-portrait{
+	//@include form-support-column;
 	width:100%;
 	--text-field-width:100%;
 	textarea{
@@ -75,8 +88,6 @@ fieldset ~ fieldset{
 	}
 
 	> tbody{
-		> tr:nth-child(even){
-		}
 		> tr > th{
 			display:block;
 			margin-bottom:0.5em;

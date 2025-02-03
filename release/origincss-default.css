@@ -1045,9 +1045,6 @@ fieldset ~ fieldset {
 table.form-landscape {
   width: 100%;
 }
-table.form-landscape > tbody > tr:nth-child(even) {
-  background-color: var(--even-row-background);
-}
 table.form-landscape > tbody > tr:has(td input) > th {
   line-height: var(--element-height);
 }
@@ -1161,9 +1158,6 @@ table.form-filter > tbody > tr > th {
 @media (orientation: landscape) {
   table.form-orientation-auto {
     width: 100%;
-  }
-  table.form-orientation-auto > tbody > tr:nth-child(even) {
-    background-color: var(--even-row-background);
   }
   table.form-orientation-auto > tbody > tr:has(td input) > th {
     line-height: var(--element-height);
